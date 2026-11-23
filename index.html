@@ -3,183 +3,451 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pawan — Portfolio</title>
+<title>Pawan Patil — Portfolio</title>
+<meta name="description" content="Pawan Patil, Associate Director at UBS in Pune. Real-time financial systems in Java and Spring Boot, and AI engineering.">
+<meta name="theme-color" content="#0a0c18">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pawan Patil — Portfolio">
+<meta property="og:description" content="Real-time financial systems in Java and Spring Boot, and AI engineering.">
+<meta property="og:url" content="https://pawanpatil11.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0c18'/%3E%3Ctext x='30' y='46' font-family='Georgia,serif' font-size='42' fill='%23ffffff' text-anchor='middle'%3EP%3C/text%3E%3Ccircle cx='49' cy='17' r='5' fill='%238a94ff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap">
 <style>
-/* VOICE: calm, precise engineering journal — a senior builder's record, not a sales page
-   IDEA: an engineering paper; the hero figure is a live event-flow diagram (producer → stream → services → clients)
-   PICTURE: SVG pipeline with animated packets, the thing Pawan builds every day
-   COLOUR and TYPE: white, ink #14110f, ultramarine #1d2bd8, cool grey; night #0d0e18. Spectral 500 + Inter
-   LAYOUT: title band, wide figure, reading column of work with margin notes, project grid, contact */
+/* VOICE: quiet confidence; a senior engineer's portfolio set like a premium product page, few hues, lots of air
+   IDEA: the page behaves like the live event stream he builds; the hero is that system, running
+   PICTURE: full-bleed canvas river of events flowing through Kafka, Spring Boot and WebSockets to clients; the pointer parts the stream
+   COLOUR and TYPE: deep ink #0a0c18, white, ultramarine #2f3cf0; Instrument Serif display, Geist text, Tiro Devanagari for project names
+   LAYOUT: floating glass nav, poster hero (name, stream, intro), case studies, bento projects, spec-sheet toolkit, ultramarine contact band */
 :root{color-scheme:light dark;
---bg:light-dark(#ffffff,#0d0e18);--ink:light-dark(#14110f,#ecebf3);--mute:light-dark(#5d6270,#9aa0b4);
---rule:light-dark(#e3e5ec,#262a3d);--acc:light-dark(#1d2bd8,#8d96ff);--panel:light-dark(#f4f5f9,#141629);--node:light-dark(#ffffff,#1a1d33)}
+--bg:light-dark(#ffffff,#0d1020);--ink:light-dark(#0e1122,#eceefa);--mute:light-dark(#585f74,#a1a7c4);
+--rule:light-dark(#e6e8f0,#23273d);--panel:light-dark(#f4f5fa,#11142a);--card:light-dark(#ffffff,#151931);
+--acc:light-dark(#2f3cf0,#8a94ff);--band:light-dark(#2f3cf0,#2732c9);
+--deep:#0a0c18;--dink:#eef0ff;--dmute:#a3a9c9;--glow:#8a94ff;
+--serif:"Instrument Serif",Georgia,"Times New Roman",serif;--deva:"Tiro Devanagari Hindi","Noto Serif Devanagari",serif;
+--sans:Geist,Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-html{scroll-padding-top:72px;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
-a{color:var(--acc)}
-.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}p{margin:0}figure{margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h2{font-size:clamp(38px,4.6vw,56px)}
+h3{font-size:26px;line-height:1.15}
 .wrap{max-width:1240px;margin:0 auto}
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
-nav .wrap{display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding:12px max(5vw,16px)}
-nav b{font:600 18px Spectral,serif;margin-right:auto}
-nav a{color:var(--ink);text-decoration:none;font-size:15px;padding:10px 2px}
-nav a:hover,nav a:focus-visible{color:var(--acc)}
-h1,h2,h3{font-family:Spectral,Georgia,serif;font-weight:500;line-height:1.05;text-wrap:balance;margin:0}
-h1{font-size:clamp(36px,5.4vw,52px)}
-h2{font-size:clamp(28px,3.4vw,36px);margin-bottom:22px}
-h3{font-size:22px;line-height:1.2}
-.lede{font-size:18px;color:var(--mute);max-width:62ch;margin:18px 0 0}
-.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:center}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
-.tags li{font-size:13.5px;border:1px solid var(--rule);border-radius:99px;padding:5px 12px;white-space:nowrap}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:8px;font-weight:500;text-decoration:none;border:1px solid var(--acc)}
-.btn.p{background:var(--acc);color:var(--bg)}
-.fig{position:relative;min-height:360px;background:var(--panel);border-radius:14px}
-.fig>svg{position:absolute;inset:0;width:100%;height:100%}
-.cap{font-size:13.5px;color:var(--mute);margin-top:10px}
-.cols{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(20px,4vw,56px)}
-.side{font-size:14px;color:var(--mute)}
-.job{padding:24px 0;border-top:1px solid var(--rule)}
-.job:first-child{border-top:0;padding-top:0}
-.job .meta{color:var(--mute);font-size:14.5px;margin:4px 0 10px}
-.job ul{margin:0;padding-left:1.1em}.job li{margin:6px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:18px}
-.card{background:var(--panel);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:10px}
-.card .k{font-size:13.5px;color:var(--acc);font-weight:600}
-.card p{margin:0;color:var(--mute);font-size:15.5px}
-.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
-.stack span{font-size:13px;background:var(--node);border:1px solid var(--rule);border-radius:6px;padding:3px 8px;white-space:nowrap}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:26px}
-.skills h3{font-size:19px;margin-bottom:8px}
-.skills p{margin:0;color:var(--mute)}
-.contact{background:var(--acc);color:#fff}
-.contact h2{color:#fff}.contact p{max-width:60ch;color:#e6e8ff}
-.contact .btn{border-color:#fff;color:#fff}.contact .btn.p{background:#fff;color:#1d2bd8}
-.note{font-size:13px;opacity:.85;margin-top:18px}
-footer{font-size:13.5px;color:var(--mute);text-align:center;padding:24px 16px}
-:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
-@media(max-width:860px){.hero,.cols{grid-template-columns:minmax(0,1fr)}.fig{min-height:300px}}
-@media(max-width:600px){nav a{font-size:14px}nav .wrap{gap:12px}}
-@media(prefers-reduced-motion:reduce){.pk{display:none}html{scroll-behavior:auto}}
+.band{padding:clamp(64px,8vw,120px) max(5vw,16px)}
+.shead{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:18px 56px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.lede{color:var(--mute);font-size:18px;max-width:58ch}
+.kicker{font-size:14px;color:var(--mute);margin-bottom:10px}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;font:500 15px/1 var(--sans);text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:background .2s,border-color .2s}
+.btn svg{width:16px;height:16px;flex:none}
+.b-light{background:#fff;color:var(--deep)}.b-light:hover{background:#dfe2ff}
+.b-ghost{background:transparent;color:var(--dink);border-color:rgba(255,255,255,.24)}.b-ghost:hover{background:rgba(255,255,255,.08)}
+
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:2px;padding:5px 5px 5px 18px;border-radius:999px;background:rgba(14,16,32,.74);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.09);box-shadow:0 10px 30px rgba(5,6,15,.22);max-width:calc(100% - 24px)}
+.nav .mk{font:400 22px/1 var(--serif);color:#fff;text-decoration:none;margin-right:12px;white-space:nowrap}
+.nav .l{color:#c6cbea;text-decoration:none;font-size:14.5px;padding:0 13px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;white-space:nowrap}
+.nav .l:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav .btn{min-height:40px;padding:0 16px;font-size:14.5px;margin-left:6px}
+
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--deep);color:var(--dink);display:grid;
+grid-template-columns:minmax(max(5vw,16px),1fr) minmax(0,720px) minmax(0,520px) minmax(max(5vw,16px),1fr);
+grid-template-areas:"s s s s" ". n i ." ". c f .";align-items:end;row-gap:28px;padding:76px 0 clamp(44px,6vw,88px)}
+.hero::before{content:"";position:absolute;inset:-10% -10% 0;z-index:-1;pointer-events:none;background:radial-gradient(48% 42% at 50% 34%,rgba(47,60,240,.32),transparent 70%)}
+.stream{grid-area:s;position:relative;height:clamp(260px,min(36vw,50vh),470px);margin-bottom:8px}
+.stream canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
+.name{grid-area:n;font-size:clamp(56px,8vw,132px);line-height:.9;letter-spacing:-.025em}
+.name i{font-style:italic}
+.say{grid-area:i;font-size:19px;line-height:1.55;color:#d6daf2;padding-left:clamp(0px,3vw,48px);max-width:48ch}
+.cta{grid-area:c;display:flex;flex-wrap:wrap;gap:10px;align-self:center}
+.facts{grid-area:f;display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;margin:0;padding:0 0 0 clamp(0px,3vw,48px);font-size:14px;color:var(--dmute);align-self:center}
+.facts li{white-space:nowrap}.facts b{color:var(--dink);font-weight:500}
+
+.orgname{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding-bottom:20px;margin-bottom:28px;border-bottom:1px solid var(--rule)}
+.orgname h3{font-size:clamp(34px,3.4vw,44px)}.orgname span{color:var(--mute)}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.case,.pc{background:var(--card);border:1px solid var(--rule);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.cfig{container-type:inline-size;display:grid;place-items:center;min-height:200px;padding:44px 24px;background:var(--deep) radial-gradient(70% 90% at 50% 0%,rgba(47,60,240,.3),transparent 70%)}
+.flow{display:flex;align-items:center;width:100%;max-width:580px}
+.flow .n{font-size:14px;color:#e9ebff;padding:9px 13px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);white-space:nowrap}
+.flow .hot{border-color:rgba(138,148,255,.75);background:rgba(47,60,240,.3)}
+.flow .stk{box-shadow:5px -5px 0 -1px var(--deep),5px -5px 0 0 rgba(138,148,255,.5),10px -10px 0 -1px var(--deep),10px -10px 0 0 rgba(138,148,255,.26)}
+.flow .ln{flex:1 1 14px;min-width:14px;height:1px;position:relative;background:linear-gradient(90deg,rgba(138,148,255,.15),rgba(138,148,255,.9))}
+.flow .ln::after{content:"";position:absolute;right:-1px;top:-3.5px;border-style:solid;border-width:4px 0 4px 6px;border-color:transparent transparent transparent rgba(138,148,255,.95)}
+@container (max-width:519px){.flow{flex-direction:column;width:auto}.flow .ln{flex:none;width:1px;height:22px;min-width:0;background:linear-gradient(180deg,rgba(138,148,255,.15),rgba(138,148,255,.9))}.flow .ln::after{right:auto;top:auto;left:-3.5px;bottom:-1px;border-width:6px 4px 0 4px;border-color:rgba(138,148,255,.95) transparent transparent transparent}}
+.ctext,.ptext{padding:26px 26px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.ctext p,.ptext p{color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:auto 0 0;padding:8px 0 0}
+.tags li{font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--rule);color:var(--mute);white-space:nowrap}
+.before{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:18px 56px;margin-top:clamp(44px,5vw,72px);padding-top:30px;border-top:1px solid var(--rule)}
+.orgs{display:flex;flex-wrap:wrap;gap:2px 26px;list-style:none;margin:0;padding:0;font:400 clamp(30px,3vw,38px)/1.2 var(--serif)}
+.orgs li{white-space:nowrap}.before>p{color:var(--mute);align-self:end}
+
+.projects{background:var(--panel)}
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pc.big{grid-column:span 2;grid-row:span 2}
+.pc.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.art{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:220px;padding:30px;background:var(--deep) radial-gradient(80% 80% at 50% 8%,rgba(47,60,240,.3),transparent 70%)}
+.art svg{display:block;width:100%;height:auto;max-width:380px}
+.pc.big .art{min-height:380px}.pc.big .art svg{max-width:440px}.pc.big .ptext{flex:none}
+.pc.wide .art{min-height:280px}.pc.wide .art svg{max-width:460px}
+.art figcaption{font-size:14px;color:var(--dmute);text-align:center;max-width:44ch}
+.kind{font-size:13.5px;font-weight:500;color:var(--acc)!important}
+.ptitle{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.deva{font:400 22px/1.2 var(--deva);color:var(--acc)}
+.mean{font-size:14px;color:var(--mute)}
+
+.spec{margin:0;border-top:1px solid var(--rule)}
+.spec div{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:6px 40px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.spec dt{font:400 26px/1.2 var(--serif)}
+.spec dd{margin:0;color:var(--mute);align-self:center}
+.now{margin-top:40px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;padding:26px 28px;border-radius:20px;background:var(--panel)}
+.now .dot{width:10px;height:10px;margin-top:6px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px color-mix(in srgb,var(--acc) 18%,transparent)}
+.now .kicker{margin-bottom:4px}
+
+.contact{position:relative;isolation:isolate;overflow:hidden;background:var(--band);color:#fff}
+.contact::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 80% at 85% 0%,rgba(255,255,255,.16),transparent 70%)}
+.mail{display:inline-block;margin:22px 0 20px;font:400 clamp(24px,6vw,82px)/1.08 var(--serif);color:#fff;text-decoration:none;overflow-wrap:anywhere;border-bottom:1px solid rgba(255,255,255,.4)}
+.mail:hover{border-color:#fff}
+.contact p{color:#e0e3ff;max-width:56ch;font-size:18px}
+.ccta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.contact .b-light{color:#2f3cf0}.contact .b-ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+footer{background:var(--deep);color:var(--dmute);font-size:14px;padding:24px max(5vw,16px)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:var(--dink);text-decoration:none;padding:10px 0}
+
+@media(max-width:1000px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.pc.big{grid-column:1/-1;grid-row:auto}}
+@media(max-width:900px){.nav{position:absolute}}
+@media(max-width:860px){
+.hero{grid-template-columns:max(5vw,16px) minmax(0,1fr) max(5vw,16px);grid-template-areas:". n ." "s s s" ". i ." ". c ." ". f .";row-gap:22px;padding-top:104px}
+.say,.facts{padding-left:0}.stream{margin:0}
+.shead,.before,.cases{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){.nav .opt{display:none}.bento,.pc.wide,.spec div{grid-template-columns:minmax(0,1fr)}.pc.wide .art{order:-1}.ctext,.ptext{padding:22px 20px 24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>Pawan</b><a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
+<nav class="nav" aria-label="Primary">
+  <a class="mk" href="#top">Pawan Patil</a>
+  <a class="l opt" href="#work">Work</a>
+  <a class="l" href="#projects">Projects</a>
+  <a class="l opt" href="#toolkit">Toolkit</a>
+  <a class="btn b-light" href="#contact">Contact</a>
+</nav>
 
-<header class="band"><div class="wrap hero">
-  <div>
-    <h1>I build real-time financial systems, and now the AI that runs on them.</h1>
-    <p class="lede">Associate Director at UBS in Pune. About a decade across UBS, Northern Trust, TIAA and CDAC, designing event-driven Java and Spring Boot microservices. I work as a hybrid: I lead programs as a TPM and still write the code.</p>
-    <ul class="tags"><li>Java · Spring Boot</li><li>Kafka · WebSockets</li><li>Microservices</li><li>Transformers &amp; LLM apps</li></ul>
-    <div class="cta"><a class="btn p" href="#projects">See projects</a><a class="btn" href="#contact">Get in touch</a></div>
+<header class="hero" id="top">
+  <h1 class="name">Pawan <i>Patil</i></h1>
+  <div class="stream" id="stream" role="img" aria-label="Animated diagram: events flow from producers through Kafka and a Spring Boot service, out over WebSockets to live clients, with a branch into PostgreSQL"><canvas></canvas></div>
+  <p class="say">I design and build real-time financial systems in Java and Spring Boot, and lead programs as a hands-on technical program manager. Lately I've been building with transformers and LLMs.</p>
+  <div class="cta">
+    <a class="btn b-light" href="#work">See selected work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5"/></svg></a>
+    <a class="btn b-ghost" href="mailto:pawanpatil.rocks@gmail.com">Email me</a>
+    <a class="btn b-ghost" href="https://www.linkedin.com/in/pawan-patil-a6b75440" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
   </div>
-  <div>
-    <div class="fig" id="flow" role="img" aria-label="Diagram: events flow from a producer through a Kafka stream into Spring Boot services and out over WebSockets to connected clients"><svg></svg></div>
-    <div class="cap">The shape of most systems I build: events in, state persisted, updates pushed live.</div>
-  </div>
-</div></header>
+  <ul class="facts">
+    <li><b>Associate Director</b> at UBS</li>
+    <li>About a decade in fintech</li>
+    <li>Pune · <span id="tm">IST</span></li>
+  </ul>
+</header>
 
-<section class="band" id="work" style="border-top:1px solid var(--rule)"><div class="wrap cols">
-  <div><h2>Work</h2><p class="side">Financial technology, with a focus on streaming data, notifications and batch processing at scale.</p></div>
-  <div>
-    <div class="job">
-      <h3>UBS, Associate Director</h3>
-      <div class="meta">Pune, India</div>
-      <ul>
-        <li><strong>Real-time notifications:</strong> worked on a platform that consumes events from Kafka, persists them and pushes them live to a web workbench over authenticated WebSockets (short-lived JWTs checked against JWKS). Now driving its redesign to scale the WebSocket tier horizontally.</li>
-        <li><strong>Lending value file processing:</strong> Spring Boot consumers read Avro messages from Kafka, load pipe-delimited files through Spring Batch into PostgreSQL, and feed generator services that calculate lending values. Currently redesigning it for performance.</li>
-        <li>Work as a hybrid technical program manager and hands-on developer across these services.</li>
-      </ul>
+<main>
+<section class="band" id="work">
+  <div class="wrap">
+    <div class="shead">
+      <h2>A decade of financial systems</h2>
+      <p class="lede">At UBS I lead programs and still write the code. These are two of the systems I work on.</p>
     </div>
-    <div class="job">
-      <h3>Northern Trust · TIAA · CDAC</h3>
-      <div class="meta">Earlier roles</div>
-      <ul>
-        <li>Built Java and Spring backend systems for financial services and research computing.</li>
-        <li>Worked deeply on AEM and DAM platforms, Adobe I/O, and Node.js integrations.</li>
-      </ul>
+    <div class="orgname"><h3>UBS</h3><span>Associate Director · Pune</span></div>
+    <div class="cases">
+      <article class="case">
+        <div class="cfig" role="img" aria-label="Kafka feeds a Spring Boot service, which pushes to a horizontally scaled WebSocket tier and on to live clients">
+          <div class="flow"><span class="n">Kafka</span><span class="ln"></span><span class="n">Spring Boot</span><span class="ln"></span><span class="n hot stk">WebSocket tier</span><span class="ln"></span><span class="n">Live clients</span></div>
+        </div>
+        <div class="ctext">
+          <h3>Real-time notifications</h3>
+          <p>Events stream in from Kafka, are persisted, and are pushed live to users in the browser over authenticated WebSockets, using short-lived JWTs verified against JWKS. I'm working on the redesign that lets the WebSocket tier scale out across instances.</p>
+          <ul class="tags"><li>Kafka</li><li>Spring Boot</li><li>WebSockets</li><li>JWT · JWKS</li></ul>
+        </div>
+      </article>
+      <article class="case">
+        <div class="cfig" role="img" aria-label="Avro messages from Kafka drive Spring Batch file loads into PostgreSQL, which feed lending value generators">
+          <div class="flow"><span class="n">Kafka · Avro</span><span class="ln"></span><span class="n hot">Spring Batch</span><span class="ln"></span><span class="n">PostgreSQL</span><span class="ln"></span><span class="n">Value generators</span></div>
+        </div>
+        <div class="ctext">
+          <h3>Lending value processing</h3>
+          <p>Consumer services read Avro messages from Kafka and load pipe-delimited files through Spring Batch into PostgreSQL, feeding generator services that calculate lending values. I'm working on redesigning it for performance.</p>
+          <ul class="tags"><li>Kafka</li><li>Avro</li><li>Spring Batch</li><li>PostgreSQL</li></ul>
+        </div>
+      </article>
+    </div>
+    <div class="before">
+      <div><p class="kicker">Before UBS</p><ul class="orgs"><li>Northern Trust</li><li>TIAA</li><li>CDAC</li></ul></div>
+      <p>Earlier in my career I went deep on Adobe Experience Manager (AEM) Cloud Service: DAM search facets, asset workflow automation, Content Fragment publishing and Oak index management, plus Adobe I/O apps in Node.js.</p>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="band" id="projects" style="background:var(--panel)"><div class="wrap">
-  <h2>Projects</h2>
-  <div class="grid" id="proj"></div>
-</div></section>
+<section class="band projects" id="projects">
+  <div class="wrap">
+    <div class="shead">
+      <h2>Side projects</h2>
+      <p class="lede">Built after hours to learn by doing. Each one carries a Sanskrit-rooted name for what it does.</p>
+    </div>
+    <div class="bento">
+      <article class="pc big">
+        <figure class="art">
+          <svg id="att" viewBox="0 0 142 142" font-family="Geist, Inter, system-ui, sans-serif" font-size="7" fill="#c9cdee" aria-hidden="true"></svg>
+          <figcaption>Causal self-attention over the characters of “shishu gpt”. Each character can only look back.</figcaption>
+        </figure>
+        <div class="ptext">
+          <p class="kind">AI · built from scratch</p>
+          <div class="ptitle"><h3>Shishu-GPT</h3><span class="deva" lang="hi">शिशु</span><span class="mean">infant</span></div>
+          <p>A roughly 10M-parameter character-level GPT trained from scratch on Apple Silicon with PyTorch on MPS. I built it to understand transformers from the inside: QKV attention, causal masking and every stage of training.</p>
+          <ul class="tags"><li>PyTorch</li><li>Transformers</li><li>Apple MPS</li></ul>
+        </div>
+      </article>
+      <article class="pc">
+        <figure class="art">
+          <svg viewBox="0 0 360 240" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a94ff"/><stop offset="1" stop-color="#2f3cf0"/></linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#b7bdf2"/></linearGradient>
+              <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c9ccff"/><stop offset="1" stop-color="#5a66f5"/></linearGradient>
+            </defs>
+            <rect x="16" y="16" width="56" height="208" rx="16" fill="#fff" fill-opacity=".04" stroke="#fff" stroke-opacity=".1"/>
+            <circle cx="44" cy="58" r="15" fill="url(#g1)"/>
+            <circle cx="44" cy="120" r="15" fill="url(#g2)"/>
+            <circle cx="44" cy="120" r="21" fill="none" stroke="#8a94ff" stroke-width="1.5"/>
+            <circle cx="44" cy="182" r="15" fill="url(#g3)"/>
+            <rect x="92" y="34" width="168" height="36" rx="14" fill="#fff" fill-opacity=".09"/>
+            <rect x="108" y="48" width="120" height="7" rx="3.5" fill="#fff" fill-opacity=".45"/>
+            <rect x="160" y="84" width="182" height="36" rx="14" fill="#2f3cf0"/>
+            <rect x="176" y="98" width="140" height="7" rx="3.5" fill="#fff" fill-opacity=".85"/>
+            <rect x="92" y="134" width="212" height="52" rx="14" fill="#fff" fill-opacity=".09"/>
+            <rect x="108" y="148" width="176" height="7" rx="3.5" fill="#fff" fill-opacity=".45"/>
+            <rect x="108" y="164" width="112" height="7" rx="3.5" fill="#fff" fill-opacity=".45"/>
+            <rect x="92" y="198" width="64" height="28" rx="14" fill="#fff" fill-opacity=".09"/>
+            <circle cx="110" cy="212" r="3.5" fill="#fff" fill-opacity=".75"/><circle cx="124" cy="212" r="3.5" fill="#fff" fill-opacity=".5"/><circle cx="138" cy="212" r="3.5" fill="#fff" fill-opacity=".3"/>
+          </svg>
+        </figure>
+        <div class="ptext">
+          <p class="kind">AI · product</p>
+          <div class="ptitle"><h3>Samvad</h3><span class="deva" lang="hi">संवाद</span><span class="mean">dialogue</span></div>
+          <p>A WhatsApp-style messaging app where you chat with several AI personas, each powered by Claude with its own voice.</p>
+          <ul class="tags"><li>Claude API</li><li>Chat UI</li><li>Personas</li></ul>
+        </div>
+      </article>
+      <article class="pc">
+        <figure class="art">
+          <svg viewBox="0 0 360 240" aria-hidden="true">
+            <rect x="16" y="16" width="328" height="208" rx="16" fill="#fff" fill-opacity=".04" stroke="#fff" stroke-opacity=".12"/>
+            <path d="M16 48h328" stroke="#fff" stroke-opacity=".1"/>
+            <circle cx="36" cy="32" r="4.5" fill="#fff" fill-opacity=".22"/><circle cx="52" cy="32" r="4.5" fill="#fff" fill-opacity=".22"/><circle cx="68" cy="32" r="4.5" fill="#fff" fill-opacity=".22"/>
+            <circle cx="318" cy="32" r="3.5" fill="#8a94ff"/>
+            <path d="M309 25a11 11 0 0 0 0 14M327 25a11 11 0 0 1 0 14" stroke="#8a94ff" stroke-opacity=".65" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <g>
+              <rect x="36" y="66" width="64" height="7" rx="3.5" fill="#8a94ff" fill-opacity=".9"/><rect x="106" y="66" width="90" height="7" rx="3.5" fill="#fff" fill-opacity=".35"/>
+              <rect x="52" y="83" width="110" height="7" rx="3.5" fill="#fff" fill-opacity=".35"/><rect x="168" y="83" width="40" height="7" rx="3.5" fill="#8a94ff" fill-opacity=".7"/>
+              <rect x="52" y="100" width="74" height="7" rx="3.5" fill="#8a94ff" fill-opacity=".9"/><rect x="132" y="100" width="96" height="7" rx="3.5" fill="#fff" fill-opacity=".35"/>
+              <rect x="68" y="117" width="132" height="7" rx="3.5" fill="#fff" fill-opacity=".35"/>
+              <rect x="68" y="134" width="58" height="7" rx="3.5" fill="#8a94ff" fill-opacity=".7"/><rect x="132" y="134" width="70" height="7" rx="3.5" fill="#fff" fill-opacity=".35"/>
+              <rect x="52" y="151" width="44" height="7" rx="3.5" fill="#fff" fill-opacity=".35"/>
+              <rect x="36" y="168" width="28" height="7" rx="3.5" fill="#8a94ff" fill-opacity=".9"/>
+            </g>
+            <rect x="212" y="182" width="116" height="30" rx="15" fill="#2f3cf0"/>
+            <path d="M226 197l5 5 9-10" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="248" y="194" width="62" height="6" rx="3" fill="#fff" fill-opacity=".9"/>
+          </svg>
+        </figure>
+        <div class="ptext">
+          <p class="kind">Developer tools</p>
+          <div class="ptitle"><h3>Pariksha</h3><span class="deva" lang="hi">परीक्षा</span><span class="mean">examination</span></div>
+          <p>A console for running DSA technical interviews. Candidate code runs through Judge0, results are pushed live over STOMP WebSockets, and every submission is tracked with JPA.</p>
+          <ul class="tags"><li>Spring Boot</li><li>Judge0</li><li>STOMP</li><li>JPA</li></ul>
+        </div>
+      </article>
+      <article class="pc wide">
+        <div class="ptext">
+          <p class="kind">iOS app</p>
+          <div class="ptitle"><h3>Milap</h3><span class="deva" lang="hi">मिलाप</span><span class="mean">meeting</span></div>
+          <p>A stranger-chat app for iPhone, with a SwiftUI front end and a Spring Boot back end. It covers Sign in with Apple, JWT-authenticated STOMP WebSockets, a StoreKit 2 subscription paywall, and server-side verification of Apple's JWKS signatures.</p>
+          <ul class="tags"><li>SwiftUI</li><li>Spring Boot</li><li>StoreKit 2</li><li>WebSockets</li></ul>
+        </div>
+        <figure class="art">
+          <svg viewBox="0 0 420 260" aria-hidden="true">
+            <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a94ff"/><stop offset="1" stop-color="#2f3cf0"/></linearGradient></defs>
+            <path d="M114 128h30M276 128h30" stroke="#8a94ff" stroke-opacity=".55" stroke-dasharray="2 6" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="150" y="14" width="120" height="232" rx="24" fill="#fff" fill-opacity=".04" stroke="#fff" stroke-opacity=".28" stroke-width="1.5"/>
+            <rect x="190" y="24" width="40" height="9" rx="4.5" fill="#fff" fill-opacity=".2"/>
+            <rect x="162" y="52" width="72" height="22" rx="11" fill="#fff" fill-opacity=".12"/>
+            <rect x="186" y="82" width="72" height="22" rx="11" fill="#2f3cf0"/>
+            <rect x="162" y="112" width="88" height="22" rx="11" fill="#fff" fill-opacity=".12"/>
+            <rect x="160" y="160" width="100" height="74" rx="16" fill="#8a94ff" fill-opacity=".16" stroke="#8a94ff" stroke-opacity=".55"/>
+            <rect x="176" y="176" width="52" height="7" rx="3.5" fill="#fff" fill-opacity=".7"/>
+            <rect x="176" y="190" width="34" height="6" rx="3" fill="#fff" fill-opacity=".35"/>
+            <rect x="174" y="206" width="72" height="18" rx="9" fill="#fff"/>
+            <path d="M80 92l30 11v22c0 20-13 34-30 40-17-6-30-20-30-40v-22z" fill="#fff" fill-opacity=".05" stroke="#8a94ff" stroke-width="1.5"/>
+            <path d="M68 128l8 8 16-17" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M342 118Q372 114 370 136" stroke="#fff" stroke-opacity=".5" stroke-dasharray="3 5" fill="none" stroke-width="1.5"/>
+            <circle cx="332" cy="104" r="16" fill="url(#g4)"/>
+            <circle cx="372" cy="152" r="16" fill="#fff" fill-opacity=".88"/>
+          </svg>
+        </figure>
+      </article>
+    </div>
+  </div>
+</section>
 
-<section class="band" id="skills"><div class="wrap">
-  <h2>Skills</h2>
-  <div class="skills" id="sk"></div>
-</div></section>
+<section class="band" id="toolkit">
+  <div class="wrap">
+    <div class="shead">
+      <h2>Toolkit</h2>
+      <p class="lede">Deep in the JVM and event streaming, broad across platforms, and now building in AI.</p>
+    </div>
+    <dl class="spec">
+      <div><dt>Backend</dt><dd>Java, Spring Boot, Spring Batch, JPA, REST APIs, microservices</dd></div>
+      <div><dt>Streaming and real time</dt><dd>Kafka, Avro, WebSockets, STOMP, JWT and JWKS</dd></div>
+      <div><dt>Data and cloud</dt><dd>PostgreSQL, Azure, API gateways</dd></div>
+      <div><dt>AI and ML</dt><dd>Transformer internals, training small GPTs, RAG pipelines, LLM agents, Claude API</dd></div>
+      <div><dt>Platforms</dt><dd>AEM and DAM, Adobe I/O, Node.js, SwiftUI</dd></div>
+      <div><dt>Ways of working</dt><dd>TDD, pair programming, clean code, technical program management</dd></div>
+    </dl>
+    <div class="now"><span class="dot" aria-hidden="true"></span><div><p class="kicker">Now</p><p>Going deeper into machine learning from first principles, from the maths up to transformers, and training small language models on Apple Silicon.</p></div></div>
+  </div>
+</section>
 
-<section class="band contact" id="contact"><div class="wrap">
-  <h2>Let's build something</h2>
-  <p>I'm open to conversations about backend architecture, real-time systems, and AI engineering, including freelance work.</p>
-  <div class="cta"><a class="btn p" href="mailto:pawanpatil.rocks@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/pawan-patil-a6b75440" rel="noopener">LinkedIn</a><button class="btn" id="cp" type="button" style="background:none;font:inherit;cursor:pointer">Copy email</button></div>
-  <p class="note" style="font-size:16px;opacity:1">pawanpatil.rocks@gmail.com</p>
-</div></section>
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <a class="mail" href="mailto:pawanpatil.rocks@gmail.com">pawanpatil.rocks@gmail.com</a>
+    <p>Happy to talk about backend architecture, real-time systems and AI engineering.</p>
+    <div class="ccta">
+      <button class="btn b-light" id="cp" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="2"/><path d="M10.5 5.5V4A1.5 1.5 0 0 0 9 2.5H4A1.5 1.5 0 0 0 2.5 4v5A1.5 1.5 0 0 0 4 10.5h1.5"/></svg><span>Copy email</span></button>
+      <a class="btn b-ghost" href="https://www.linkedin.com/in/pawan-patil-a6b75440" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+      <a class="btn b-ghost" href="https://github.com/pawanpatil11" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
 
-<footer>© <span id="yr">2026</span> Pawan · Built with care in Pune</footer>
+<footer><div class="wrap"><span>© <span id="yr">2026</span> Pawan Patil · Pune</span><a href="#top">Back to top ↑</a></div></footer>
 
 <script>
 {
-const P=[
- {k:"AI · Deep learning",t:"Shishu-GPT",d:"A roughly 10M-parameter character-level GPT trained from scratch on Apple Silicon (MPS), built to understand transformer internals: QKV attention, causal masking and each training stage.",s:["PyTorch","Transformers","Apple MPS"]},
- {k:"AI · Product",t:"Samvad",d:"A WhatsApp-style messaging app where you chat with several Claude-powered AI personas, each with its own voice.",s:["Claude API","Chat UI","Personas"]},
- {k:"Developer tools",t:"Pariksha",d:"A full console for running DSA technical interviews: run candidate code through Judge0, push results live over STOMP WebSockets, and track submissions with JPA.",s:["Spring Boot","Judge0","STOMP","JPA"]},
- {k:"Mobile",t:"Milap",d:"An iOS stranger-chat app with Sign in with Apple, JWT-authenticated STOMP WebSockets, a StoreKit 2 subscription paywall, and server-side Apple JWKS signature verification.",s:["SwiftUI","Spring Boot","StoreKit 2","WebSockets"]}
-];
-document.getElementById('proj').innerHTML=P.map(p=>`<article class="card"><div class="k">${p.k}</div><h3>${p.t}</h3><p>${p.d}</p><div class="stack">${p.s.map(x=>`<span>${x}</span>`).join('')}</div></article>`).join('');
+/* small page details */
+const yr=document.getElementById('yr');yr.textContent=new Date().getFullYear();
+const tm=document.getElementById('tm');
+try{const f=new Intl.DateTimeFormat('en-IN',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'Asia/Kolkata'});const tick=()=>{tm.textContent=f.format(new Date())+' IST'};tick();setInterval(tick,30000)}catch(e){}
+const cp=document.getElementById('cp'),cpl=cp.querySelector('span');
+cp.addEventListener('click',async()=>{let ok=false;try{await navigator.clipboard.writeText('pawanpatil.rocks@gmail.com');ok=true}catch(e){}cpl.textContent=ok?'Copied':'Copy failed';setTimeout(()=>{cpl.textContent='Copy email'},1800)});
 
-const S=[
- {t:"Backend",d:"Java, Spring Boot, Spring Batch, JPA, REST, microservice design"},
- {t:"Streaming & real-time",d:"Kafka (Confluent), Avro, WebSockets, STOMP, JWT and JWKS auth"},
- {t:"Data & cloud",d:"PostgreSQL, Azure App Service, API gateways"},
- {t:"AI / ML",d:"Transformer internals, training small GPTs, RAG pipelines, LLM agents, Claude API"},
- {t:"Other platforms",d:"AEM and DAM, Adobe I/O, Node.js, SwiftUI"},
- {t:"Leadership",d:"Technical program management alongside hands-on delivery"}
-];
-document.getElementById('sk').innerHTML=S.map(s=>`<div><h3>${s.t}</h3><p>${s.d}</p></div>`).join('');
-document.getElementById('yr').textContent=new Date().getFullYear();
-const cp=document.getElementById('cp');
-cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('pawanpatil.rocks@gmail.com');cp.textContent='Copied';}catch(e){cp.textContent='Copy failed';}setTimeout(()=>cp.textContent='Copy email',1800);});
+/* Shishu-GPT: causal attention matrix */
+const att=document.getElementById('att');
+const ch=['s','h','i','s','h','u','·','g','p','t'],n=ch.length,c=11,g=2,o=14;
+let seed=11;const rnd=()=>(seed=seed*16807%2147483647)/2147483647;
+let m='';
+ch.forEach((t,i)=>{const p=o+i*(c+g)+c/2;m+=`<text x="${p}" y="9" text-anchor="middle">${t}</text><text x="6" y="${p+2.5}" text-anchor="middle">${t}</text>`});
+for(let i=0;i<n;i++){
+  const w=[];for(let j=0;j<=i;j++)w.push(Math.exp(rnd()*1.8+(j===i?1:0)+(i-j<2?.7:0)+(j<i&&ch[j]===ch[i]?1.1:0)));
+  const S=w.reduce((a,b)=>a+b,0);
+  for(let j=0;j<n;j++){const x=o+j*(c+g),y=o+i*(c+g);
+    m+=j<=i?`<rect x="${x}" y="${y}" width="${c}" height="${c}" rx="2.2" fill="#8a94ff" fill-opacity="${Math.min(1,.1+w[j]/S*1.9).toFixed(2)}"/>`
+           :`<rect x="${x+.5}" y="${y+.5}" width="${c-1}" height="${c-1}" rx="2" fill="none" stroke="#ffffff" stroke-opacity=".09"/>`}}
+att.setAttribute('viewBox',`0 0 ${o+n*(c+g)-g} ${o+n*(c+g)-g}`);att.innerHTML=m;
 
-const box=document.getElementById('flow'),svg=box.querySelector('svg');
-const draw=()=>{
- const W=box.clientWidth,H=box.clientHeight,sm=W<520;
- const nodes=[
-  {x:.12,y:.5,l:sm?"Events":"Event producer"},
-  {x:.36,y:.5,l:"Kafka"},
-  {x:.62,y:.3,l:sm?"Service":"Spring Boot svc"},
-  {x:.62,y:.7,l:"PostgreSQL"},
-  {x:.88,y:.5,l:sm?"Clients":"Live clients"}
- ];
- const E=[[0,1],[1,2],[2,3],[2,4]];
- const nw=sm?78:118,nh=40;
- const px=n=>n.x*W,py=n=>n.y*H;
- let o=`<defs><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity=".12"/></filter></defs>`;
- E.forEach(([a,b],i)=>{
-  const A=nodes[a],B=nodes[b];
-  const d=`M${px(A)} ${py(A)} C${(px(A)+px(B))/2} ${py(A)},${(px(A)+px(B))/2} ${py(B)},${px(B)} ${py(B)}`;
-  o+=`<path id="e${i}" d="${d}" fill="none" stroke="var(--rule)" stroke-width="2.5"/>`;
-  o+=`<circle class="pk" r="5" fill="var(--acc)"><animateMotion dur="${2.4+i*.3}s" begin="${i*.5}s" repeatCount="indefinite"><mpath href="#e${i}"/></animateMotion></circle>`;
- });
- nodes.forEach((n,i)=>{
-  const hi=i===1;
-  o+=`<g filter="url(#sh)"><rect x="${px(n)-nw/2}" y="${py(n)-nh/2}" width="${nw}" height="${nh}" rx="9" fill="${hi?'var(--acc)':'var(--node)'}" stroke="${hi?'none':'var(--rule)'}"/></g>`;
-  o+=`<text x="${px(n)}" y="${py(n)+5}" text-anchor="middle" font-family="Inter,sans-serif" font-size="${sm?12:13.5}" font-weight="500" fill="${hi?'#fff':'var(--ink)'}">${n.l}</text>`;
- });
- const C=nodes[4];
- [-1,0,1].forEach(k=>{ if(!sm) o+=`<circle cx="${px(C)+nw/2+14}" cy="${py(C)+k*14}" r="4" fill="var(--acc)" opacity=".5"/>`;});
- svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
- svg.innerHTML=o;
-};
-const ro=new ResizeObserver(draw);ro.observe(box);
+/* Hero: the event stream */
+const box=document.getElementById('stream'),cv=box.querySelector('canvas'),ctx=cv.getContext('2d');
+const RM=matchMedia('(prefers-reduced-motion: reduce)');
+const ST=[['Producers','Events',.075,.56,'b'],['Kafka','Kafka',.285,.40,'t'],['Spring Boot','Spring Boot',.5,.6,'b'],['WebSockets','WebSockets',.715,.38,'t'],['Live clients','Clients',.915,.55,'b'],['PostgreSQL','Postgres',.64,.86,'r']];
+const RT=[[[-.06,.5],0,1,2,3,4,[1.06,.48]],[[-.06,.5],0,1,2,5]];
+const STEP=2;
+let W=0,H=0,dpr=1,routes=[],parts=[],stn=[],mx=-1e4,my=-1e4,on=false,last=0,shown=true,raf=0,WMAX=40,WMIN=1.2,PIN=60,SPD=1;
+const cr=(a,b,c,d,t)=>.5*(2*b+(c-a)*t+(2*a-5*b+4*c-d)*t*t+(3*b-a-3*c+d)*t*t*t);
+const rr=(x,y,w,h,r)=>{ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()};
+function mk(def){
+  const P=def.map(q=>typeof q==='number'?[stn[q].x,stn[q].y]:[q[0]*W,q[1]*H]);
+  const D=[];
+  for(let i=0;i<P.length-1;i++){const a=P[Math.max(0,i-1)],b=P[i],e=P[i+1],d=P[Math.min(P.length-1,i+2)];
+    for(let k=0;k<20;k++){const t=k/20;D.push([cr(a[0],b[0],e[0],d[0],t),cr(a[1],b[1],e[1],d[1],t)])}}
+  D.push(P[P.length-1]);
+  const X=[D[0][0]],Y=[D[0][1]];let rem=STEP;
+  for(let i=1;i<D.length;i++){const ax=D[i-1][0],ay=D[i-1][1],dx=D[i][0]-ax,dy=D[i][1]-ay,L=Math.hypot(dx,dy);let u=0;
+    while(L-u>=rem){u+=rem;X.push(ax+dx*u/L);Y.push(ay+dy*u/L);rem=STEP}
+    rem-=L-u}
+  const len=X.length,NX=new Float32Array(len),NY=new Float32Array(len);
+  for(let i=0;i<len;i++){const a=Math.max(0,i-1),b=Math.min(len-1,i+1),dx=X[b]-X[a],dy=Y[b]-Y[a],l=Math.hypot(dx,dy)||1;NX[i]=-dy/l;NY[i]=dx/l}
+  const ss=def.filter(q=>typeof q==='number').map(q=>{let bi=0,bd=1e12;for(let i=0;i<len;i++){const d=(X[i]-stn[q].x)**2+(Y[i]-stn[q].y)**2;if(d<bd){bd=d;bi=i}}return bi*STEP});
+  const path=new Path2D();path.moveTo(X[0],Y[0]);for(let i=3;i<len;i+=3)path.lineTo(X[i],Y[i]);path.lineTo(X[len-1],Y[len-1]);
+  return {X,Y,NX,NY,len,L:(len-1)*STEP,ss,path,sink:typeof def[def.length-1]==='number'};
+}
+function env(R,s){let d=1e9;for(const q of R.ss){const v=Math.abs(s-q);if(v<d)d=v}const k=Math.min(1,d/PIN);return WMIN+(WMAX-WMIN)*k*k*(3-2*k)}
+function spawn(p,init){
+  p.r=Math.random()<.74?0:1;const R=routes[p.r];
+  p.s=init?Math.random()*R.L:Math.random()*30;
+  p.v=(34+Math.random()*58)*SPD;
+  p.o=(Math.random()+Math.random()+Math.random())/1.5-1;
+  p.z=Math.random();p.c=Math.random()<.22;
+}
+function draw(dt){
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
+  ctx.lineCap='round';
+  for(const R of routes){ctx.strokeStyle='rgba(138,148,255,.035)';ctx.lineWidth=WMAX*1.3;ctx.stroke(R.path);ctx.strokeStyle='rgba(138,148,255,.2)';ctx.lineWidth=1;ctx.stroke(R.path)}
+  ctx.globalCompositeOperation='lighter';
+  const RAD=Math.max(70,W*.07),RAD2=RAD*RAD;
+  for(const p of parts){
+    const R=routes[p.r];
+    if(dt){p.s+=p.v*dt;if(p.s>=R.L-STEP)spawn(p,false)}
+    const Q=routes[p.r],i=Math.min(Q.len-2,(p.s/STEP)|0),w=env(Q,p.s);
+    let x=Q.X[i]+Q.NX[i]*p.o*w,y=Q.Y[i]+Q.NY[i]*p.o*w;
+    const dx=x-mx,dy=y-my,dd=dx*dx+dy*dy;
+    if(dd<RAD2){const d=Math.sqrt(dd)||1,f=(1-d/RAD)*RAD*.45;x+=dx/d*f;y+=dy/d*f}
+    const tx=Q.X[i+1]-Q.X[i],ty=Q.Y[i+1]-Q.Y[i],tl=Math.hypot(tx,ty)||1,sl=4+p.v*.07*(.4+p.z);
+    let a=.22+.62*p.z;if(Q.sink){const left=Q.L-p.s;if(left<70)a*=Math.max(0,left)/70}
+    ctx.strokeStyle=(p.c?'rgba(236,239,255,':'rgba(125,137,255,')+a.toFixed(3)+')';
+    ctx.lineWidth=.7+p.z*1.5;
+    ctx.beginPath();ctx.moveTo(x-tx/tl*sl,y-ty/tl*sl);ctx.lineTo(x,y);ctx.stroke();
+  }
+  ctx.globalCompositeOperation='source-over';
+  ctx.font='500 13px Geist, Inter, system-ui, sans-serif';ctx.textBaseline='middle';
+  const sm=W<560;
+  for(const s of stn){
+    const near=Math.hypot(s.x-mx,s.y-my)<46,gr=near?48:34;
+    const gd=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,gr);gd.addColorStop(0,'rgba(138,148,255,.55)');gd.addColorStop(1,'rgba(138,148,255,0)');
+    ctx.fillStyle=gd;ctx.beginPath();ctx.arc(s.x,s.y,gr,0,7);ctx.fill();
+    ctx.fillStyle='#0a0c18';ctx.beginPath();ctx.arc(s.x,s.y,8,0,7);ctx.fill();
+    ctx.strokeStyle=near?'#ffffff':'rgba(238,240,255,.85)';ctx.lineWidth=1.5;ctx.stroke();
+    ctx.fillStyle='#8a94ff';ctx.beginPath();ctx.arc(s.x,s.y,3,0,7);ctx.fill();
+    const t=sm?s.s:s.l,pw=ctx.measureText(t).width+20,ph=26;
+    let lx=s.p==='r'?s.x+18:s.x-pw/2,ly=s.p==='t'?s.y-18-ph:s.p==='b'?s.y+18:s.y-ph/2;
+    lx=Math.max(8,Math.min(W-8-pw,lx));ly=Math.max(4,Math.min(H-4-ph,ly));
+    rr(lx,ly,pw,ph,13);ctx.fillStyle='rgba(10,12,24,.84)';ctx.fill();ctx.strokeStyle='rgba(255,255,255,.14)';ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle='#e9ebff';ctx.fillText(t,lx+10,ly+ph/2+.5);
+  }
+}
+function size(){
+  const r=box.getBoundingClientRect();W=Math.max(1,r.width);H=Math.max(1,r.height);dpr=Math.min(2,window.devicePixelRatio||1);
+  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
+  stn=ST.map(a=>({l:a[0],s:a[1],x:a[2]*W,y:a[3]*H,p:a[4]}));
+  WMAX=H*.11;WMIN=1.2;PIN=Math.max(46,W*.055);SPD=Math.max(.65,Math.min(1.3,W/1250));
+  routes=RT.map(mk);
+  parts=Array.from({length:Math.round(Math.min(640,W*(W<700?.8:.5)))},()=>{const p={};spawn(p,true);return p});
+  draw(0);
+}
+function loop(t){raf=0;if(!on)return;const dt=last?Math.min(.05,(t-last)/1000):0;last=t;draw(dt);raf=requestAnimationFrame(loop)}
+function start(){if(on||RM.matches||!shown||document.hidden)return;on=true;last=0;raf=requestAnimationFrame(loop)}
+function stop(){on=false;if(raf)cancelAnimationFrame(raf);raf=0}
+const ro=new ResizeObserver(()=>{size()});ro.observe(box);
+const io=new IntersectionObserver(es=>{shown=es[0].isIntersecting;shown?start():stop()});io.observe(box);
+document.addEventListener('visibilitychange',()=>{document.hidden?stop():start()});
+box.addEventListener('pointermove',e=>{const r=box.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;if(!on)draw(0)});
+box.addEventListener('pointerleave',()=>{mx=my=-1e4;if(!on)draw(0)});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(!on&&routes.length)draw(0)});
+if(RM.addEventListener)RM.addEventListener('change',()=>{if(RM.matches){stop();draw(0)}else start()});
 }
 </script>
 </body>
