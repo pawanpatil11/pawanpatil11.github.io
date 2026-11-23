@@ -1,682 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pawan Patil — Associate Director at UBS · Software Engineer</title>
-<meta name="description" content="Portfolio of Pawan Patil — Associate Director at UBS. Engineer and technical program manager building global, real-time financial systems and enterprise content platforms.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pawan — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --paper:#F7F9FB;
-  --ink:#17233B;
-  --ink-deep:#0E1729;
-  --ink-soft:#4A5871;
-  --line:#D9E0EA;
-  --marigold:#D98E04;
-  --marigold-deep:#A96E00;
-  --marigold-soft:#FBF3E2;
-  --card:#FFFFFF;
-  --mono-bg:#EEF2F7;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'IBM Plex Sans',system-ui,sans-serif;
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.6;
-  font-size:16px;
-  overflow-x:hidden;
-}
-.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
-a{color:inherit}
-::selection{background:var(--marigold);color:#fff}
-a:focus-visible,button:focus-visible{outline:2px solid var(--marigold-deep);outline-offset:3px;border-radius:2px}
-
-/* ---------- ambient background ---------- */
-.bg-grid{
-  position:fixed;inset:0;z-index:-2;pointer-events:none;
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size:48px 48px;
-  opacity:.35;
-  mask-image:radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 75%);
-  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 75%);
-}
-.bg-glow{
-  position:fixed;z-index:-1;pointer-events:none;
-  width:640px;height:640px;border-radius:50%;
-  top:-260px;right:-180px;
-  background:radial-gradient(circle, rgba(217,142,4,.14), transparent 65%);
-  animation:breathe 9s ease-in-out infinite;
-}
-@keyframes breathe{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.12);opacity:.6}}
-
-/* ---------- nav + progress ---------- */
-nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(247,249,251,.82);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-mark{font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:500;text-decoration:none;letter-spacing:.02em}
-.nav-mark b{color:var(--marigold-deep)}
-.nav-links{display:flex;gap:26px;list-style:none}
-.nav-links a{
-  font-size:.85rem;font-weight:500;text-decoration:none;color:var(--ink-soft);
-  position:relative;padding:4px 0;
-}
-.nav-links a::after{
-  content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
-  background:var(--marigold);transition:width .25s ease;
-}
-.nav-links a:hover{color:var(--ink)}
-.nav-links a:hover::after{width:100%}
-#progress{
-  position:absolute;left:0;bottom:-1px;height:2px;width:0;
-  background:linear-gradient(90deg,var(--marigold),var(--marigold-deep));
-  transition:width .1s linear;
-}
-
-/* ---------- reveal engine ---------- */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
-
-/* ---------- hero ---------- */
-header{padding:96px 0 80px;position:relative}
-.eyebrow{
-  font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:500;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--marigold-deep);
-  display:flex;align-items:center;gap:10px;margin-bottom:22px;
-  opacity:0;animation:rise .7s ease .1s forwards;
-}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--marigold)}
-h1{
-  font-family:'Archivo',sans-serif;font-weight:800;
-  font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.04;letter-spacing:-.02em;
-  max-width:17ch;
-}
-h1 .line{display:block;overflow:hidden}
-h1 .line span{display:inline-block;transform:translateY(110%);animation:lineUp .8s cubic-bezier(.2,.7,.2,1) forwards}
-h1 .line:nth-child(1) span{animation-delay:.18s}
-h1 .line:nth-child(2) span{animation-delay:.3s}
-h1 .line:nth-child(3) span{animation-delay:.42s}
-h1 .accent{color:var(--marigold-deep);position:relative}
-h1 .accent::after{
-  content:"";position:absolute;left:0;bottom:6px;width:100%;height:.14em;
-  background:var(--marigold-soft);z-index:-1;
-  transform:scaleX(0);transform-origin:left;
-  animation:underline .6s ease 1s forwards;
-}
-@keyframes lineUp{to{transform:translateY(0)}}
-@keyframes underline{to{transform:scaleX(1)}}
-@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end}
-.hero-lede{
-  margin-top:26px;font-size:1.12rem;color:var(--ink-soft);max-width:54ch;
-  opacity:0;animation:rise .7s ease .65s forwards;
-}
-.hero-lede strong{color:var(--ink);font-weight:600}
-
-/* metadata block */
-.meta-block{
-  background:var(--card);border:1px solid var(--line);border-radius:12px;
-  font-family:'IBM Plex Mono',monospace;font-size:.82rem;
-  box-shadow:0 10px 34px rgba(23,35,59,.08);
-  overflow:hidden;
-  opacity:0;animation:rise .8s ease .8s forwards;
-  transition:transform .3s ease,box-shadow .3s ease;
-}
-.meta-block:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 18px 44px rgba(23,35,59,.13)}
-.meta-block .mb-head{
-  padding:10px 16px;border-bottom:1px solid var(--line);
-  background:var(--mono-bg);color:var(--ink-soft);font-size:.75rem;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.mb-dots{display:flex;gap:5px}
-.mb-dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}
-.mb-dots i:first-child{background:var(--marigold)}
-.meta-block dl{padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:7px 18px}
-.meta-block dt{color:var(--ink-soft)}
-.meta-block dt::after{content:":"}
-.meta-block dd{font-weight:500;overflow-wrap:anywhere}
-.meta-block dd.hl{color:var(--marigold-deep)}
-.cursor{display:inline-block;width:7px;height:1em;background:var(--marigold);vertical-align:text-bottom;margin-left:6px;animation:blink 1.1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-
-/* ---------- ticker ---------- */
-.ticker{
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:var(--card);overflow:hidden;white-space:nowrap;
-  font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--ink-soft);
-  padding:11px 0;position:relative;
-}
-.ticker-track{display:inline-block;animation:scroll 38s linear infinite}
-.ticker:hover .ticker-track{animation-play-state:paused}
-.ticker-track span{margin:0 26px}
-.ticker-track b{color:var(--marigold-deep);font-weight:500}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ---------- sections ---------- */
-section{padding:84px 0;border-bottom:1px solid var(--line)}
-.sec-label{
-  font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:500;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;
-}
-h2{
-  font-family:'Archivo',sans-serif;font-weight:700;
-  font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.015em;margin-bottom:34px;
-}
-
-/* about / roles */
-.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
-.role{
-  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 22px;
-  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
-}
-.role:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(23,35,59,.1);border-color:var(--marigold)}
-.role h3{font-family:'Archivo',sans-serif;font-size:1.02rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:9px}
-.role h3::before{content:"";width:8px;height:8px;background:var(--marigold);border-radius:2px;flex:none;transition:transform .25s ease}
-.role:hover h3::before{transform:rotate(45deg) scale(1.2)}
-.role p{font-size:.93rem;color:var(--ink-soft)}
-.about-lede{font-size:1.08rem;max-width:66ch;color:var(--ink-soft);margin-bottom:40px}
-.about-lede strong{color:var(--ink);font-weight:600}
-
-/* stats strip */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
-.stat{text-align:left;border-left:2px solid var(--marigold);padding-left:16px}
-.stat .num{font-family:'Archivo',sans-serif;font-weight:800;font-size:2rem;line-height:1.1}
-.stat .lbl{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em}
-
-/* ---------- timeline ---------- */
-.timeline{position:relative;margin-left:8px}
-.timeline::before{
-  content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;
-  background:linear-gradient(var(--marigold), var(--line));border-radius:2px;
-}
-.job{position:relative;padding:0 0 36px 34px}
-.job:last-child{padding-bottom:0}
-.job::before{
-  content:"";position:absolute;left:-5px;top:7px;width:12px;height:12px;border-radius:50%;
-  background:var(--paper);border:2px solid var(--marigold);z-index:1;
-  transition:transform .25s ease;
-}
-.job:hover::before{transform:scale(1.35)}
-.job.current::before{background:var(--marigold)}
-.job.current::after{
-  content:"";position:absolute;left:-5px;top:7px;width:12px;height:12px;border-radius:50%;
-  border:2px solid var(--marigold);animation:pulse 2s ease-out infinite;
-}
-@keyframes pulse{from{transform:scale(1);opacity:.8}to{transform:scale(2.4);opacity:0}}
-.job .period{
-  font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--ink-soft);
-  letter-spacing:.03em;margin-bottom:3px;
-}
-.job h3{font-family:'Archivo',sans-serif;font-size:1.12rem;font-weight:700}
-.job .org{font-size:.95rem;font-weight:600;color:var(--marigold-deep);margin-bottom:6px}
-.job p{font-size:.93rem;color:var(--ink-soft);max-width:62ch}
-
-/* ---------- project cards ---------- */
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.asset{
-  background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;
-  display:flex;flex-direction:column;position:relative;
-  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-.asset::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(120deg, transparent 30%, rgba(217,142,4,.07) 50%, transparent 70%);
-  transform:translateX(-100%);
-}
-.asset:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(23,35,59,.12);border-color:var(--marigold)}
-.asset:hover::after{transform:translateX(100%);transition:transform .9s ease}
-.asset-head{
-  padding:11px 18px;background:var(--mono-bg);border-bottom:1px solid var(--line);
-  font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--ink-soft);
-  display:flex;justify-content:space-between;gap:12px;
-}
-.asset-head .status{color:var(--marigold-deep);font-weight:500;display:flex;align-items:center;gap:6px}
-.asset-head .status::before{
-  content:"";width:7px;height:7px;border-radius:50%;background:var(--marigold);
-  animation:glowdot 2.2s ease-in-out infinite;
-}
-@keyframes glowdot{0%,100%{box-shadow:0 0 0 0 rgba(217,142,4,.5)}50%{box-shadow:0 0 0 5px rgba(217,142,4,0)}}
-.asset-body{padding:20px 18px 18px;flex:1;display:flex;flex-direction:column}
-.asset h3{font-family:'Archivo',sans-serif;font-size:1.08rem;font-weight:700;margin-bottom:8px}
-.asset p{font-size:.92rem;color:var(--ink-soft);margin-bottom:16px}
-.asset dl{
-  margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:.76rem;
-  border-top:1px dashed var(--line);padding-top:12px;
-  display:grid;grid-template-columns:auto 1fr;gap:5px 16px;
-}
-.asset dt{color:var(--ink-soft)}
-.asset dt::after{content:":"}
-.asset dd{font-weight:500;overflow-wrap:anywhere}
-
-/* ---------- skills ---------- */
-.skill-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 48px}
-.skill-group h3{
-  font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:500;
-  text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft);margin-bottom:12px;
-}
-.tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{
-  font-size:.83rem;font-weight:500;padding:5px 12px;border-radius:999px;
-  background:var(--card);border:1px solid var(--line);
-  transition:transform .18s ease,border-color .18s ease,background .18s ease;
-}
-.tag:hover{transform:translateY(-2px);border-color:var(--marigold);background:var(--marigold-soft)}
-.tag.core{border-color:var(--marigold);background:var(--marigold-soft)}
-
-/* ---------- education ---------- */
-.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.edu-card{
-  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;
-  transition:transform .25s ease,box-shadow .25s ease;
-}
-.edu-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(23,35,59,.09)}
-.edu-card .period{font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--ink-soft);margin-bottom:5px}
-.edu-card h3{font-family:'Archivo',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:3px}
-.edu-card p{font-size:.92rem;color:var(--ink-soft)}
-.edu-extra{margin-top:28px;font-size:.93rem;color:var(--ink-soft)}
-.edu-extra strong{color:var(--ink);font-weight:600}
-
-/* ---------- contact (inverted finale) ---------- */
-#contact{
-  border-bottom:none;background:var(--ink-deep);color:var(--paper);
-  position:relative;overflow:hidden;
-}
-#contact::before{
-  content:"";position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
-  background-size:48px 48px;
-  mask-image:radial-gradient(ellipse 80% 90% at 80% 20%, black, transparent 70%);
-  -webkit-mask-image:radial-gradient(ellipse 80% 90% at 80% 20%, black, transparent 70%);
-}
-#contact .sec-label{color:rgba(247,249,251,.55)}
-#contact h2{color:#fff;font-size:clamp(2rem,4.5vw,3rem)}
-.contact-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start;position:relative}
-.contact-inner p{max-width:46ch;color:rgba(247,249,251,.75);font-size:1.05rem}
-.contact-links{list-style:none;font-family:'IBM Plex Mono',monospace;font-size:.9rem;display:grid;gap:14px}
-.contact-links a{
-  text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:10px;
-  border-bottom:1px solid rgba(247,249,251,.25);padding-bottom:3px;color:#fff;
-  transition:border-color .2s ease,color .2s ease;
-}
-.contact-links a:hover{border-color:var(--marigold);color:var(--marigold)}
-.contact-links .k{color:rgba(247,249,251,.5);font-weight:400}
-.btn{
-  display:inline-block;margin-top:22px;font-family:'Archivo',sans-serif;font-weight:700;
-  font-size:.95rem;background:var(--marigold);color:var(--ink-deep);text-decoration:none;
-  padding:14px 28px;border-radius:8px;
-  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
-}
-.btn:hover{background:#F0A31A;transform:translateY(-2px);box-shadow:0 10px 26px rgba(217,142,4,.35)}
-
-footer{
-  background:var(--ink-deep);color:rgba(247,249,251,.5);
-  padding:0 0 44px;font-family:'IBM Plex Mono',monospace;font-size:.76rem;
-}
-.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid rgba(247,249,251,.12);padding-top:28px}
-
-/* ---------- responsive ---------- */
-@media(max-width:860px){
-  .hero-grid{grid-template-columns:1fr;gap:40px;align-items:start}
-  .roles{grid-template-columns:1fr;gap:18px}
-  .projects{grid-template-columns:1fr}
-  .skill-groups{grid-template-columns:1fr}
-  .edu-grid{grid-template-columns:1fr}
-  .stats{grid-template-columns:repeat(2,1fr);gap:28px 16px}
-  .nav-links{display:none}
-  header{padding:60px 0 56px}
-  section{padding:60px 0}
-}
-
-/* ---------- reduced motion ---------- */
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .rv,.eyebrow,.hero-lede,.meta-block{opacity:1!important;transform:none!important}
-  h1 .line span{transform:none!important}
-  h1 .accent::after{transform:scaleX(1)!important}
-  .ticker-track{animation:none!important}
-}
+/* VOICE: calm, precise engineering journal — a senior builder's record, not a sales page
+   IDEA: an engineering paper; the hero figure is a live event-flow diagram (producer → stream → services → clients)
+   PICTURE: SVG pipeline with animated packets, the thing Pawan builds every day
+   COLOUR and TYPE: white, ink #14110f, ultramarine #1d2bd8, cool grey; night #0d0e18. Spectral 500 + Inter
+   LAYOUT: title band, wide figure, reading column of work with margin notes, project grid, contact */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0d0e18);--ink:light-dark(#14110f,#ecebf3);--mute:light-dark(#5d6270,#9aa0b4);
+--rule:light-dark(#e3e5ec,#262a3d);--acc:light-dark(#1d2bd8,#8d96ff);--panel:light-dark(#f4f5f9,#141629);--node:light-dark(#ffffff,#1a1d33)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:var(--acc)}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+nav .wrap{display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding:12px max(5vw,16px)}
+nav b{font:600 18px Spectral,serif;margin-right:auto}
+nav a{color:var(--ink);text-decoration:none;font-size:15px;padding:10px 2px}
+nav a:hover,nav a:focus-visible{color:var(--acc)}
+h1,h2,h3{font-family:Spectral,Georgia,serif;font-weight:500;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(36px,5.4vw,52px)}
+h2{font-size:clamp(28px,3.4vw,36px);margin-bottom:22px}
+h3{font-size:22px;line-height:1.2}
+.lede{font-size:18px;color:var(--mute);max-width:62ch;margin:18px 0 0}
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:center}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.tags li{font-size:13.5px;border:1px solid var(--rule);border-radius:99px;padding:5px 12px;white-space:nowrap}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:8px;font-weight:500;text-decoration:none;border:1px solid var(--acc)}
+.btn.p{background:var(--acc);color:var(--bg)}
+.fig{position:relative;min-height:360px;background:var(--panel);border-radius:14px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.cap{font-size:13.5px;color:var(--mute);margin-top:10px}
+.cols{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(20px,4vw,56px)}
+.side{font-size:14px;color:var(--mute)}
+.job{padding:24px 0;border-top:1px solid var(--rule)}
+.job:first-child{border-top:0;padding-top:0}
+.job .meta{color:var(--mute);font-size:14.5px;margin:4px 0 10px}
+.job ul{margin:0;padding-left:1.1em}.job li{margin:6px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:18px}
+.card{background:var(--panel);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.card .k{font-size:13.5px;color:var(--acc);font-weight:600}
+.card p{margin:0;color:var(--mute);font-size:15.5px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.stack span{font-size:13px;background:var(--node);border:1px solid var(--rule);border-radius:6px;padding:3px 8px;white-space:nowrap}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:26px}
+.skills h3{font-size:19px;margin-bottom:8px}
+.skills p{margin:0;color:var(--mute)}
+.contact{background:var(--acc);color:#fff}
+.contact h2{color:#fff}.contact p{max-width:60ch;color:#e6e8ff}
+.contact .btn{border-color:#fff;color:#fff}.contact .btn.p{background:#fff;color:#1d2bd8}
+.note{font-size:13px;opacity:.85;margin-top:18px}
+footer{font-size:13.5px;color:var(--mute);text-align:center;padding:24px 16px}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+@media(max-width:860px){.hero,.cols{grid-template-columns:minmax(0,1fr)}.fig{min-height:300px}}
+@media(max-width:600px){nav a{font-size:14px}nav .wrap{gap:12px}}
+@media(prefers-reduced-motion:reduce){.pk{display:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<nav><div class="wrap"><b>Pawan</b><a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 
-<div class="bg-grid" aria-hidden="true"></div>
-<div class="bg-glow" aria-hidden="true"></div>
-
-<nav>
-  <div class="wrap nav-inner">
-    <a class="nav-mark" href="#top">pawan<b>.patil</b></a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#work">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+<header class="band"><div class="wrap hero">
+  <div>
+    <h1>I build real-time financial systems, and now the AI that runs on them.</h1>
+    <p class="lede">Associate Director at UBS in Pune. About a decade across UBS, Northern Trust, TIAA and CDAC, designing event-driven Java and Spring Boot microservices. I work as a hybrid: I lead programs as a TPM and still write the code.</p>
+    <ul class="tags"><li>Java · Spring Boot</li><li>Kafka · WebSockets</li><li>Microservices</li><li>Transformers &amp; LLM apps</li></ul>
+    <div class="cta"><a class="btn p" href="#projects">See projects</a><a class="btn" href="#contact">Get in touch</a></div>
   </div>
-  <div id="progress" aria-hidden="true"></div>
-</nav>
+  <div>
+    <div class="fig" id="flow" role="img" aria-label="Diagram: events flow from a producer through a Kafka stream into Spring Boot services and out over WebSockets to connected clients"><svg></svg></div>
+    <div class="cap">The shape of most systems I build: events in, state persisted, updates pushed live.</div>
+  </div>
+</div></header>
 
-<header id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Associate Director @ UBS · Software Engineer</p>
-      <h1>
-        <span class="line"><span>I build the systems</span></span>
-        <span class="line"><span>behind <span class="accent">global finance</span></span></span>
-        <span class="line"><span>— in real time.</span></span>
-      </h1>
-      <p class="hero-lede">I'm <strong>Pawan Patil</strong> — a passionate technologist with a decade of delivering <strong>global, real-time financial systems</strong> for tier-1 institutions across private banking, investment banking, and wealth management. Engineering craft is my anchor: <strong>TDD, pairing, clean code</strong> — and lately, AI-powered developer tooling.</p>
+<section class="band" id="work" style="border-top:1px solid var(--rule)"><div class="wrap cols">
+  <div><h2>Work</h2><p class="side">Financial technology, with a focus on streaming data, notifications and batch processing at scale.</p></div>
+  <div>
+    <div class="job">
+      <h3>UBS, Associate Director</h3>
+      <div class="meta">Pune, India</div>
+      <ul>
+        <li><strong>Real-time notifications:</strong> worked on a platform that consumes events from Kafka, persists them and pushes them live to a web workbench over authenticated WebSockets (short-lived JWTs checked against JWKS). Now driving its redesign to scale the WebSocket tier horizontally.</li>
+        <li><strong>Lending value file processing:</strong> Spring Boot consumers read Avro messages from Kafka, load pipe-delimited files through Spring Batch into PostgreSQL, and feed generator services that calculate lending values. Currently redesigning it for performance.</li>
+        <li>Work as a hybrid technical program manager and hands-on developer across these services.</li>
+      </ul>
     </div>
-    <aside class="meta-block" aria-label="Quick profile">
-      <div class="mb-head"><span>profile/pawan-patil</span><span class="mb-dots"><i></i><i></i><i></i></span></div>
-      <dl>
-        <dt>role</dt><dd class="hl">Associate Director, UBS</dd>
-        <dt>base</dt><dd>Pune, India</dd>
-        <dt>domain</dt><dd>Private &amp; Investment Banking</dd>
-        <dt>stack</dt><dd>Java · Spring Boot · Cloud</dd>
-        <dt>also</dt><dd>Node.js · AEM · Adobe I/O</dd>
-        <dt>exploring</dt><dd class="hl">AI agents · LLM tooling<span class="cursor"></span></dd>
-      </dl>
-    </aside>
-  </div>
-</header>
-
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span><b>JAVA</b> ▲ core</span><span><b>SPRING BOOT</b> ▲ daily</span><span><b>MICROSERVICES</b> ▲ scale</span><span><b>SYSTEM DESIGN</b> ▲ craft</span><span><b>TDD</b> ▲ always</span><span><b>CLOUD</b> ▲ native</span><span><b>NODE.JS</b> ▲ fluent</span><span><b>AEM / DAM</b> ▲ deep</span><span><b>ADOBE I/O</b> ▲ prod</span><span><b>AI AGENTS</b> ▲ exploring</span><span><b>CLEAN CODE</b> ▲ non-negotiable</span>
-    <span><b>JAVA</b> ▲ core</span><span><b>SPRING BOOT</b> ▲ daily</span><span><b>MICROSERVICES</b> ▲ scale</span><span><b>SYSTEM DESIGN</b> ▲ craft</span><span><b>TDD</b> ▲ always</span><span><b>CLOUD</b> ▲ native</span><span><b>NODE.JS</b> ▲ fluent</span><span><b>AEM / DAM</b> ▲ deep</span><span><b>ADOBE I/O</b> ▲ prod</span><span><b>AI AGENTS</b> ▲ exploring</span><span><b>CLEAN CODE</b> ▲ non-negotiable</span>
-  </div>
-</div>
-
-<section id="about">
-  <div class="wrap">
-    <p class="sec-label rv">01 — About</p>
-    <h2 class="rv">Craft first. Delivery always.</h2>
-    <p class="about-lede rv d1">Ten years across <strong>UBS, Northern Trust, TIAA, and CDAC</strong> have taught me that great financial software comes from high-performance agile squads that care about the craft — test-driven development, pair programming, clean code — backed by strong DevOps practices and automation. I bring both the <strong>engineer's hands</strong> and the <strong>program manager's map</strong> to every delivery.</p>
-    <div class="roles">
-      <div class="role rv d1">
-        <h3>Engineering</h3>
-        <p>Java, Spring Boot, and microservices for complex, real-time financial systems — plus hands-on depth in Node.js, AEM/DAM platforms, and Adobe I/O serverless integrations.</p>
-      </div>
-      <div class="role rv d2">
-        <h3>Program &amp; delivery</h3>
-        <p>Driving delivery in co-located and distributed agile setups: system design, cross-team coordination, release planning, and an unwavering focus on developer experience.</p>
-      </div>
-      <div class="role rv d3">
-        <h3>AI &amp; what's next</h3>
-        <p>Building with LLM APIs and agentic tooling — tool use, RAG pipelines, and AI-assisted developer workflows — to raise the quality bar for software delivery.</p>
-      </div>
-    </div>
-    <div class="stats">
-      <div class="stat rv d1"><div class="num" data-count="10">0</div><div class="lbl">years in fintech</div></div>
-      <div class="stat rv d2"><div class="num" data-count="4">0</div><div class="lbl">tier-1 institutions</div></div>
-      <div class="stat rv d3"><div class="num" data-count="3">0</div><div class="lbl">languages spoken</div></div>
-      <div class="stat rv d4"><div class="num" data-count="1">0</div><div class="lbl">craft obsession</div></div>
+    <div class="job">
+      <h3>Northern Trust · TIAA · CDAC</h3>
+      <div class="meta">Earlier roles</div>
+      <ul>
+        <li>Built Java and Spring backend systems for financial services and research computing.</li>
+        <li>Worked deeply on AEM and DAM platforms, Adobe I/O, and Node.js integrations.</li>
+      </ul>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="experience">
-  <div class="wrap">
-    <p class="sec-label rv">02 — Experience</p>
-    <h2 class="rv">A decade in financial technology.</h2>
-    <div class="timeline">
-      <div class="job current rv">
-        <p class="period">Jan 2026 — Present</p>
-        <h3>Associate Director</h3>
-        <p class="org">UBS · Pune</p>
-        <p>Leading engineering delivery in UBS Wealth Management — combining hands-on system design with program-level ownership across distributed agile squads.</p>
-      </div>
-      <div class="job rv d1">
-        <p class="period">Mar 2023 — Jan 2026</p>
-        <h3>Software Engineer</h3>
-        <p class="org">UBS · Pune</p>
-        <p>Built and delivered software for UBS Wealth Management, focusing on engineering practices, developer experience, and high-quality delivery in agile squads.</p>
-      </div>
-      <div class="job rv d1">
-        <p class="period">Jun 2020 — May 2022</p>
-        <h3>Associate</h3>
-        <p class="org">Northern Trust Corporation · Pune</p>
-        <p>Developed software for global financial services in the asset servicing and banking domain.</p>
-      </div>
-      <div class="job rv d1">
-        <p class="period">Jan 2019 — Jun 2020</p>
-        <h3>Software Engineer &amp; Analyst</h3>
-        <p class="org">TIAA · Pune</p>
-        <p>Engineered solutions for retirement and financial services platforms serving millions of participants.</p>
-      </div>
-      <div class="job rv d1">
-        <p class="period">Aug 2016 — Dec 2018</p>
-        <h3>Software Engineer</h3>
-        <p class="org">CDAC · Pune</p>
-        <p>Started my engineering career at India's premier R&amp;D organization in advanced computing, building a foundation in software craftsmanship.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="band" id="projects" style="background:var(--panel)"><div class="wrap">
+  <h2>Projects</h2>
+  <div class="grid" id="proj"></div>
+</div></section>
 
-<section id="work">
-  <div class="wrap">
-    <p class="sec-label rv">03 — Selected projects</p>
-    <h2 class="rv">Deep-dive builds, rendered as asset records.</h2>
-    <div class="projects">
+<section class="band" id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills" id="sk"></div>
+</div></section>
 
-      <article class="asset rv d1">
-        <div class="asset-head"><span>/work/indd-package-automation</span><span class="status">shipped</span></div>
-        <div class="asset-body">
-          <h3>INDD Final-Files Package Automation</h3>
-          <p>Designed and built an AEM workflow that packages InDesign final files into ZIP archives with mirrored folder hierarchies, PDF thumbnails, IDML files, and supporting assets — fully automated, zero disruption to existing vendor workflows.</p>
-          <dl>
-            <dt>platform</dt><dd>AEM as a Cloud Service</dd>
-            <dt>tech</dt><dd>Java, OSGi, JCR, Granite UI</dd>
-            <dt>role</dt><dd>Design + implementation</dd>
-          </dl>
-        </div>
-      </article>
+<section class="band contact" id="contact"><div class="wrap">
+  <h2>Let's build something</h2>
+  <p>I'm open to conversations about backend architecture, real-time systems, and AI engineering, including freelance work.</p>
+  <div class="cta"><a class="btn p" href="mailto:pawanpatil.rocks@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/pawan-patil-a6b75440" rel="noopener">LinkedIn</a><button class="btn" id="cp" type="button" style="background:none;font:inherit;cursor:pointer">Copy email</button></div>
+  <p class="note" style="font-size:16px;opacity:1">pawanpatil.rocks@gmail.com</p>
+</div></section>
 
-      <article class="asset rv d2">
-        <div class="asset-head"><span>/work/stale-index-cleanup</span><span class="status">shipped</span></div>
-        <div class="asset-body">
-          <h3>Oak Stale Index Cleanup Service</h3>
-          <p>Built a safety-first service to detect and remove stale custom Lucene index versions in AEM Cloud Service, with composite version parsing and dry-run defaults — reclaiming repository health without risking live search.</p>
-          <dl>
-            <dt>platform</dt><dd>AEMaaCS / Oak</dd>
-            <dt>tech</dt><dd>Java, Oak indexes, OSGi config</dd>
-            <dt>role</dt><dd>Solo build</dd>
-          </dl>
-        </div>
-      </article>
-
-      <article class="asset rv d1">
-        <div class="asset-head"><span>/work/rendition-generator</span><span class="status">in production</span></div>
-        <div class="asset-body">
-          <h3>Adobe I/O Rendition Generator</h3>
-          <p>A serverless Adobe I/O (App Builder) application generating custom asset renditions for an enterprise DAM — including dependency hardening, npm vulnerability remediation, and CI hygiene for a long-running production service.</p>
-          <dl>
-            <dt>platform</dt><dd>Adobe I/O Runtime</dd>
-            <dt>tech</dt><dd>Node.js, App Builder, Asset APIs</dd>
-            <dt>role</dt><dd>Development + maintenance</dd>
-          </dl>
-        </div>
-      </article>
-
-      <article class="asset rv d2">
-        <div class="asset-head"><span>/work/dam-search-control</span><span class="status">shipped</span></div>
-        <div class="asset-body">
-          <h3>DAM Search Control for Archived Assets</h3>
-          <p>Custom search filtering in the AEM DAM UI so archived assets stay out of everyday results but remain discoverable on demand — a custom PredicateEvaluator wired through Sling Models, HTL, and clientlibs.</p>
-          <dl>
-            <dt>platform</dt><dd>AEM DAM</dd>
-            <dt>tech</dt><dd>Java, Sling, HTL, clientlibs</dd>
-            <dt>role</dt><dd>Design + implementation</dd>
-          </dl>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <p class="sec-label rv">04 — Skills</p>
-    <h2 class="rv">The toolkit.</h2>
-    <div class="skill-groups">
-      <div class="skill-group rv d1">
-        <h3>Languages &amp; frameworks</h3>
-        <div class="tags">
-          <span class="tag core">Java</span>
-          <span class="tag core">Spring Boot</span>
-          <span class="tag core">Microservices</span>
-          <span class="tag">JavaScript / Node.js</span>
-          <span class="tag">Cloud</span>
-          <span class="tag">System Design</span>
-          <span class="tag">Data Structures &amp; Algorithms</span>
-        </div>
-      </div>
-      <div class="skill-group rv d2">
-        <h3>Engineering practices</h3>
-        <div class="tags">
-          <span class="tag core">TDD</span>
-          <span class="tag">Pair programming</span>
-          <span class="tag">Clean code</span>
-          <span class="tag">Agile squads</span>
-          <span class="tag">DevOps &amp; automation</span>
-          <span class="tag">Developer experience</span>
-        </div>
-      </div>
-      <div class="skill-group rv d1">
-        <h3>Domain &amp; platforms</h3>
-        <div class="tags">
-          <span class="tag core">Private &amp; Investment Banking</span>
-          <span class="tag">Wealth Management</span>
-          <span class="tag">AEM / DAM</span>
-          <span class="tag">Adobe I/O / App Builder</span>
-          <span class="tag">OSGi / JCR / Sling</span>
-        </div>
-      </div>
-      <div class="skill-group rv d2">
-        <h3>AI &amp; emerging</h3>
-        <div class="tags">
-          <span class="tag core">LLM APIs &amp; tool use</span>
-          <span class="tag">AI agents</span>
-          <span class="tag">RAG &amp; vector databases</span>
-          <span class="tag">Claude / Anthropic API</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <div class="wrap">
-    <p class="sec-label rv">05 — Education</p>
-    <h2 class="rv">Foundations.</h2>
-    <div class="edu-grid">
-      <div class="edu-card rv d1">
-        <p class="period">2016</p>
-        <h3>PG-DAC, Information Technology</h3>
-        <p>Sunbeam Institute of Information Technology</p>
-      </div>
-      <div class="edu-card rv d2">
-        <p class="period">2011 — 2015</p>
-        <h3>BE, Electronics &amp; Telecommunication</h3>
-        <p>Sanjivani College of Engineering, Kopargaon</p>
-      </div>
-    </div>
-    <p class="edu-extra rv d2"><strong>Languages:</strong> English, Hindi, Marathi (full professional proficiency) &nbsp;·&nbsp; <strong>Certification:</strong> AMCAT Certified Data Processing Specialist</p>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap contact-inner">
-    <div class="rv">
-      <p class="sec-label">06 — Contact</p>
-      <h2>Let's talk.</h2>
-      <p>Financial systems, enterprise platforms, AI tooling, or an interesting problem in between — I'm always up for a good conversation.</p>
-      <a class="btn" href="mailto:pawanpatil.rocks@gmail.com">Email me</a>
-    </div>
-    <ul class="contact-links rv d2">
-      <li><a href="mailto:pawanpatil.rocks@gmail.com"><span class="k">email</span> pawanpatil.rocks@gmail.com</a></li>
-      <li><a href="https://www.linkedin.com/in/pawan-patil-a6b75440/" rel="me"><span class="k">linkedin</span> linkedin.com/in/pawan-patil-a6b75440</a></li>
-    </ul>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap footer-inner">
-    <span>© 2026 Pawan Patil</span>
-    <span>hand-built · no framework · one file</span>
-  </div>
-</footer>
+<footer>© <span id="yr">2026</span> Pawan · Built with care in Pune</footer>
 
 <script>
-(function(){
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+{
+const P=[
+ {k:"AI · Deep learning",t:"Shishu-GPT",d:"A roughly 10M-parameter character-level GPT trained from scratch on Apple Silicon (MPS), built to understand transformer internals: QKV attention, causal masking and each training stage.",s:["PyTorch","Transformers","Apple MPS"]},
+ {k:"AI · Product",t:"Samvad",d:"A WhatsApp-style messaging app where you chat with several Claude-powered AI personas, each with its own voice.",s:["Claude API","Chat UI","Personas"]},
+ {k:"Developer tools",t:"Pariksha",d:"A full console for running DSA technical interviews: run candidate code through Judge0, push results live over STOMP WebSockets, and track submissions with JPA.",s:["Spring Boot","Judge0","STOMP","JPA"]},
+ {k:"Mobile",t:"Milap",d:"An iOS stranger-chat app with Sign in with Apple, JWT-authenticated STOMP WebSockets, a StoreKit 2 subscription paywall, and server-side Apple JWKS signature verification.",s:["SwiftUI","Spring Boot","StoreKit 2","WebSockets"]}
+];
+document.getElementById('proj').innerHTML=P.map(p=>`<article class="card"><div class="k">${p.k}</div><h3>${p.t}</h3><p>${p.d}</p><div class="stack">${p.s.map(x=>`<span>${x}</span>`).join('')}</div></article>`).join('');
 
-  // scroll reveals
-  var rvs = document.querySelectorAll('.rv');
-  if(reduced || !('IntersectionObserver' in window)){
-    rvs.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    },{threshold:0.12, rootMargin:'0px 0px -6% 0px'});
-    rvs.forEach(function(el){ io.observe(el); });
-  }
+const S=[
+ {t:"Backend",d:"Java, Spring Boot, Spring Batch, JPA, REST, microservice design"},
+ {t:"Streaming & real-time",d:"Kafka (Confluent), Avro, WebSockets, STOMP, JWT and JWKS auth"},
+ {t:"Data & cloud",d:"PostgreSQL, Azure App Service, API gateways"},
+ {t:"AI / ML",d:"Transformer internals, training small GPTs, RAG pipelines, LLM agents, Claude API"},
+ {t:"Other platforms",d:"AEM and DAM, Adobe I/O, Node.js, SwiftUI"},
+ {t:"Leadership",d:"Technical program management alongside hands-on delivery"}
+];
+document.getElementById('sk').innerHTML=S.map(s=>`<div><h3>${s.t}</h3><p>${s.d}</p></div>`).join('');
+document.getElementById('yr').textContent=new Date().getFullYear();
+const cp=document.getElementById('cp');
+cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('pawanpatil.rocks@gmail.com');cp.textContent='Copied';}catch(e){cp.textContent='Copy failed';}setTimeout(()=>cp.textContent='Copy email',1800);});
 
-  // count-up stats
-  var nums = document.querySelectorAll('.stat .num');
-  function animateCount(el){
-    var target = parseInt(el.getAttribute('data-count'),10);
-    if(reduced){ el.textContent = target; return; }
-    var start = null, dur = 1200;
-    function step(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts-start)/dur, 1);
-      el.textContent = Math.round(target * (1 - Math.pow(1-p, 3)));
-      if(p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  if('IntersectionObserver' in window && !reduced){
-    var io2 = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ animateCount(e.target); io2.unobserve(e.target); }
-      });
-    },{threshold:0.5});
-    nums.forEach(function(el){ io2.observe(el); });
-  } else {
-    nums.forEach(animateCount);
-  }
-
-  // scroll progress bar
-  var bar = document.getElementById('progress');
-  function onScroll(){
-    var h = document.documentElement;
-    var max = h.scrollHeight - h.clientHeight;
-    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
-  }
-  document.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-})();
+const box=document.getElementById('flow'),svg=box.querySelector('svg');
+const draw=()=>{
+ const W=box.clientWidth,H=box.clientHeight,sm=W<520;
+ const nodes=[
+  {x:.12,y:.5,l:sm?"Events":"Event producer"},
+  {x:.36,y:.5,l:"Kafka"},
+  {x:.62,y:.3,l:sm?"Service":"Spring Boot svc"},
+  {x:.62,y:.7,l:"PostgreSQL"},
+  {x:.88,y:.5,l:sm?"Clients":"Live clients"}
+ ];
+ const E=[[0,1],[1,2],[2,3],[2,4]];
+ const nw=sm?78:118,nh=40;
+ const px=n=>n.x*W,py=n=>n.y*H;
+ let o=`<defs><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity=".12"/></filter></defs>`;
+ E.forEach(([a,b],i)=>{
+  const A=nodes[a],B=nodes[b];
+  const d=`M${px(A)} ${py(A)} C${(px(A)+px(B))/2} ${py(A)},${(px(A)+px(B))/2} ${py(B)},${px(B)} ${py(B)}`;
+  o+=`<path id="e${i}" d="${d}" fill="none" stroke="var(--rule)" stroke-width="2.5"/>`;
+  o+=`<circle class="pk" r="5" fill="var(--acc)"><animateMotion dur="${2.4+i*.3}s" begin="${i*.5}s" repeatCount="indefinite"><mpath href="#e${i}"/></animateMotion></circle>`;
+ });
+ nodes.forEach((n,i)=>{
+  const hi=i===1;
+  o+=`<g filter="url(#sh)"><rect x="${px(n)-nw/2}" y="${py(n)-nh/2}" width="${nw}" height="${nh}" rx="9" fill="${hi?'var(--acc)':'var(--node)'}" stroke="${hi?'none':'var(--rule)'}"/></g>`;
+  o+=`<text x="${px(n)}" y="${py(n)+5}" text-anchor="middle" font-family="Inter,sans-serif" font-size="${sm?12:13.5}" font-weight="500" fill="${hi?'#fff':'var(--ink)'}">${n.l}</text>`;
+ });
+ const C=nodes[4];
+ [-1,0,1].forEach(k=>{ if(!sm) o+=`<circle cx="${px(C)+nw/2+14}" cy="${py(C)+k*14}" r="4" fill="var(--acc)" opacity=".5"/>`;});
+ svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+ svg.innerHTML=o;
+};
+const ro=new ResizeObserver(draw);ro.observe(box);
+}
 </script>
-
 </body>
 </html>
