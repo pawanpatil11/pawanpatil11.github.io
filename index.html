@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pawan Patil — Portfolio</title>
-<meta name="description" content="Pawan Patil, Associate Director at UBS in Pune. Real-time financial systems in Java and Spring Boot, and AI engineering.">
+<meta name="description" content="Pawan Patil, Associate Director at UBS Wealth Management in Pune. Global, real-time financial systems in Java, Spring Boot and Kafka, and AI engineering.">
 <meta name="theme-color" content="#0a0c18">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pawan Patil — Portfolio">
-<meta property="og:description" content="Real-time financial systems in Java and Spring Boot, and AI engineering.">
+<meta property="og:description" content="Associate Director at UBS Wealth Management. Real-time financial systems in Java, Spring Boot and Kafka.">
 <meta property="og:url" content="https://pawanpatil11.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0c18'/%3E%3Ctext x='30' y='46' font-family='Georgia,serif' font-size='42' fill='%23ffffff' text-anchor='middle'%3EP%3C/text%3E%3Ccircle cx='49' cy='17' r='5' fill='%238a94ff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,11 +17,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap">
 <style>
-/* VOICE: quiet confidence; a senior engineer's portfolio set like a premium product page, few hues, lots of air
+/* VOICE: calm, senior and exact; a professional portfolio set like a premium product page, few hues, generous air
    IDEA: the page behaves like the live event stream he builds; the hero is that system, running
-   PICTURE: full-bleed canvas river of events flowing through Kafka, Spring Boot and WebSockets to clients; the pointer parts the stream
+   PICTURE: full-bleed canvas river of events through Kafka, Spring Boot and WebSockets to clients; the pointer parts the stream
    COLOUR and TYPE: deep ink #0a0c18, white, ultramarine #2f3cf0; Instrument Serif display, Geist text, Tiro Devanagari for project names
-   LAYOUT: floating glass nav, poster hero (name, stream, intro), case studies, bento projects, spec-sheet toolkit, ultramarine contact band */
+   LAYOUT: glass nav, poster hero, about with principles, dated timeline, selected systems, bento projects, skills with credentials, ultramarine contact */
 :root{color-scheme:light dark;
 --bg:light-dark(#ffffff,#0d1020);--ink:light-dark(#0e1122,#eceefa);--mute:light-dark(#585f74,#a1a7c4);
 --rule:light-dark(#e6e8f0,#23273d);--panel:light-dark(#f4f5fa,#11142a);--card:light-dark(#ffffff,#151931);
@@ -39,6 +39,7 @@ h2{font-size:clamp(38px,4.6vw,56px)}
 h3{font-size:26px;line-height:1.15}
 .wrap{max-width:1240px;margin:0 auto}
 .band{padding:clamp(64px,8vw,120px) max(5vw,16px)}
+.alt{background:var(--panel)}
 .shead{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:18px 56px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
 .lede{color:var(--mute);font-size:18px;max-width:58ch}
 .kicker{font-size:14px;color:var(--mute);margin-bottom:10px}
@@ -50,7 +51,7 @@ h3{font-size:26px;line-height:1.15}
 
 .nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:2px;padding:5px 5px 5px 18px;border-radius:999px;background:rgba(14,16,32,.74);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.09);box-shadow:0 10px 30px rgba(5,6,15,.22);max-width:calc(100% - 24px)}
 .nav .mk{font:400 22px/1 var(--serif);color:#fff;text-decoration:none;margin-right:12px;white-space:nowrap}
-.nav .l{color:#c6cbea;text-decoration:none;font-size:14.5px;padding:0 13px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;white-space:nowrap}
+.nav .l{color:#c6cbea;text-decoration:none;font-size:14.5px;padding:0 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;white-space:nowrap}
 .nav .l:hover{color:#fff;background:rgba(255,255,255,.07)}
 .nav .btn{min-height:40px;padding:0 16px;font-size:14.5px;margin-left:6px}
 
@@ -67,8 +68,35 @@ grid-template-areas:"s s s s" ". n i ." ". c f .";align-items:end;row-gap:28px;p
 .facts{grid-area:f;display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;margin:0;padding:0 0 0 clamp(0px,3vw,48px);font-size:14px;color:var(--dmute);align-self:center}
 .facts li{white-space:nowrap}.facts b{color:var(--dink);font-weight:500}
 
-.orgname{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding-bottom:20px;margin-bottom:28px;border-bottom:1px solid var(--rule)}
-.orgname h3{font-size:clamp(34px,3.4vw,44px)}.orgname span{color:var(--mute)}
+.strip{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 32px;padding-bottom:26px;margin-bottom:clamp(40px,5vw,72px);border-bottom:1px solid var(--rule)}
+.strip p{font-size:14px;color:var(--mute)}
+.strip ul{display:flex;flex-wrap:wrap;gap:2px 32px;list-style:none;margin:0;padding:0;font:400 clamp(26px,2.8vw,34px)/1.25 var(--serif)}
+.strip li{white-space:nowrap}
+.about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:20px 56px}
+.pull{font:400 clamp(28px,3.1vw,40px)/1.18 var(--serif);letter-spacing:-.01em;text-wrap:balance;margin-bottom:22px}
+.body{color:var(--mute);font-size:17px;max-width:64ch}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 32px;margin-top:36px;padding-top:28px;border-top:1px solid var(--rule)}
+.pillars h3{font-size:24px;margin-bottom:6px}
+.pillars p{color:var(--mute);font-size:15.5px}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 24px;margin:32px 0 0;padding:24px 26px;border-radius:18px;background:var(--panel)}
+.meta dt{font-size:13.5px;color:var(--mute)}
+.meta dd{margin:2px 0 0;font-weight:500}
+
+.tl{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.job{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:8px 40px;padding:32px 0;border-bottom:1px solid var(--rule)}
+.when{font:400 clamp(24px,2.4vw,30px)/1.2 var(--serif);color:var(--mute);font-variant-numeric:tabular-nums;white-space:nowrap}
+.org{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.org h3{font-size:clamp(28px,3vw,36px)}
+.org span{color:var(--mute);font-size:15px}
+.roles{list-style:none;margin:16px 0 0;padding:0 0 0 22px;border-left:1px solid var(--rule);display:grid;gap:12px}
+.roles li{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px;max-width:640px}
+.roles li::before{content:"";position:absolute;left:-28px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--acc)}
+.alt .roles li::before{background:var(--panel)}
+.roles li.cur::before{background:var(--acc)}
+.roles b{font-weight:500}
+.roles span{color:var(--mute);font-size:14.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.job p{color:var(--mute);margin-top:14px;max-width:64ch}
+
 .cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .case,.pc{background:var(--card);border:1px solid var(--rule);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
 .cfig{container-type:inline-size;display:grid;place-items:center;min-height:200px;padding:44px 24px;background:var(--deep) radial-gradient(70% 90% at 50% 0%,rgba(47,60,240,.3),transparent 70%)}
@@ -83,11 +111,7 @@ grid-template-areas:"s s s s" ". n i ." ". c f .";align-items:end;row-gap:28px;p
 .ctext p,.ptext p{color:var(--mute)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:auto 0 0;padding:8px 0 0}
 .tags li{font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--rule);color:var(--mute);white-space:nowrap}
-.before{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:18px 56px;margin-top:clamp(44px,5vw,72px);padding-top:30px;border-top:1px solid var(--rule)}
-.orgs{display:flex;flex-wrap:wrap;gap:2px 26px;list-style:none;margin:0;padding:0;font:400 clamp(30px,3vw,38px)/1.2 var(--serif)}
-.orgs li{white-space:nowrap}.before>p{color:var(--mute);align-self:end}
 
-.projects{background:var(--panel)}
 .bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .pc.big{grid-column:span 2;grid-row:span 2}
 .pc.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
@@ -101,11 +125,17 @@ grid-template-areas:"s s s s" ". n i ." ". c f .";align-items:end;row-gap:28px;p
 .deva{font:400 22px/1.2 var(--deva);color:var(--acc)}
 .mean{font-size:14px;color:var(--mute)}
 
+.skills{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:40px 56px;align-items:start}
 .spec{margin:0;border-top:1px solid var(--rule)}
-.spec div{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:6px 40px;padding:22px 0;border-bottom:1px solid var(--rule)}
-.spec dt{font:400 26px/1.2 var(--serif)}
+.spec div{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:6px 32px;padding:20px 0;border-bottom:1px solid var(--rule)}
+.spec dt{font:400 24px/1.2 var(--serif)}
 .spec dd{margin:0;color:var(--mute);align-self:center}
-.now{margin-top:40px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;padding:26px 28px;border-radius:20px;background:var(--panel)}
+.creds{display:grid;gap:16px}
+.cred{background:var(--panel);border-radius:18px;padding:22px 24px}
+.cred h3{font-size:22px;line-height:1.2}
+.cred p{color:var(--mute);font-size:15px;margin-top:4px}
+.cred .it+.it{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
+.now{margin-top:40px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;padding:26px 28px;border-radius:20px;border:1px solid var(--rule)}
 .now .dot{width:10px;height:10px;margin-top:6px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 6px color-mix(in srgb,var(--acc) 18%,transparent)}
 .now .kicker{margin-bottom:4px}
 
@@ -120,49 +150,117 @@ footer{background:var(--deep);color:var(--dmute);font-size:14px;padding:24px max
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 footer a{color:var(--dink);text-decoration:none;padding:10px 0}
 
-@media(max-width:1000px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.pc.big{grid-column:1/-1;grid-row:auto}}
+@media(max-width:1000px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.pc.big{grid-column:1/-1;grid-row:auto}.skills{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:900px){.nav{position:absolute}}
 @media(max-width:860px){
 .hero{grid-template-columns:max(5vw,16px) minmax(0,1fr) max(5vw,16px);grid-template-areas:". n ." "s s s" ". i ." ". c ." ". f .";row-gap:22px;padding-top:104px}
 .say,.facts{padding-left:0}.stream{margin:0}
-.shead,.before,.cases{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:640px){.nav .opt{display:none}.bento,.pc.wide,.spec div{grid-template-columns:minmax(0,1fr)}.pc.wide .art{order:-1}.ctext,.ptext{padding:22px 20px 24px}}
+.shead,.cases,.about{grid-template-columns:minmax(0,1fr)}.meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.nav .opt{display:none}.bento,.pc.wide,.spec div,.pillars,.job{grid-template-columns:minmax(0,1fr)}.pc.wide .art{order:-1}.ctext,.ptext{padding:22px 20px 24px}.meta{padding:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <nav class="nav" aria-label="Primary">
   <a class="mk" href="#top">Pawan Patil</a>
-  <a class="l opt" href="#work">Work</a>
-  <a class="l" href="#projects">Projects</a>
-  <a class="l opt" href="#toolkit">Toolkit</a>
+  <a class="l opt" href="#about">About</a>
+  <a class="l" href="#experience">Experience</a>
+  <a class="l opt" href="#projects">Projects</a>
+  <a class="l opt" href="#skills">Skills</a>
   <a class="btn b-light" href="#contact">Contact</a>
 </nav>
 
 <header class="hero" id="top">
   <h1 class="name">Pawan <i>Patil</i></h1>
   <div class="stream" id="stream" role="img" aria-label="Animated diagram: events flow from producers through Kafka and a Spring Boot service, out over WebSockets to live clients, with a branch into PostgreSQL"><canvas></canvas></div>
-  <p class="say">I design and build real-time financial systems in Java and Spring Boot, and lead programs as a hands-on technical program manager. Lately I've been building with transformers and LLMs.</p>
+  <p class="say">I build global, real-time financial systems in Java and Spring Boot for private and investment banking, and lead programs as a hands-on technical program manager. Lately I've been building with transformers and LLMs.</p>
   <div class="cta">
-    <a class="btn b-light" href="#work">See selected work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5"/></svg></a>
+    <a class="btn b-light" href="#experience">See experience <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5"/></svg></a>
     <a class="btn b-ghost" href="mailto:pawanpatil.rocks@gmail.com">Email me</a>
     <a class="btn b-ghost" href="https://www.linkedin.com/in/pawan-patil-a6b75440" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
   </div>
   <ul class="facts">
-    <li><b>Associate Director</b> at UBS</li>
-    <li>About a decade in fintech</li>
+    <li><b>Associate Director</b>, UBS Wealth Management</li>
+    <li>Engineering since 2016</li>
     <li>Pune · <span id="tm">IST</span></li>
   </ul>
 </header>
 
 <main>
+<section class="band" id="about">
+  <div class="wrap">
+    <div class="strip"><p>Experience across</p><ul><li>UBS</li><li>Northern Trust</li><li>TIAA</li><li>CDAC</li></ul></div>
+    <div class="about">
+      <h2>About</h2>
+      <div>
+        <p class="pull">A technologist at heart, delivering global, real-time financial systems for tier-1 banks.</p>
+        <p class="body">I've spent ten years building software, most of them in financial services, delivering for tier-1 institutions in private and investment banking at UBS, Northern Trust and TIAA. Today I'm an Associate Director in UBS Wealth Management, where I lead programs as a hands-on technical program manager and still write the code.</p>
+        <div class="pillars">
+          <div><h3>Craft</h3><p>TDD, pairing and clean code, with a steady focus on software craftsmanship.</p></div>
+          <div><h3>Teams</h3><p>Developer-driven agile squads, whether co-located or distributed.</p></div>
+          <div><h3>Delivery</h3><p>DevOps practices, automation and developer experience that lead to higher-quality software.</p></div>
+        </div>
+        <dl class="meta">
+          <div><dt>Based in</dt><dd>Pune, Maharashtra</dd></div>
+          <div><dt>Engineering since</dt><dd>2016</dd></div>
+          <div><dt>Domain</dt><dd>Private and investment banking</dd></div>
+          <div><dt>Languages</dt><dd>English, Hindi, Marathi</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="experience">
+  <div class="wrap">
+    <div class="shead">
+      <h2>Experience</h2>
+      <p class="lede">From CDAC in 2016 to UBS Wealth Management today.</p>
+    </div>
+    <ol class="tl">
+      <li class="job">
+        <p class="when">2023 – Now</p>
+        <div>
+          <div class="org"><h3>UBS</h3><span>Wealth Management · Pune</span></div>
+          <ul class="roles">
+            <li class="cur"><b>Associate Director</b><span>Jan 2026 – Present</span></li>
+            <li><b>Software Engineer</b><span>Mar 2023 – Jan 2026</span></li>
+          </ul>
+          <p>Real-time and batch platforms in Java, Spring Boot and Kafka. Promoted to Associate Director in January 2026, I lead programs as a hands-on technical program manager while staying in the code.</p>
+        </div>
+      </li>
+      <li class="job">
+        <p class="when">2020 – 2022</p>
+        <div>
+          <div class="org"><h3>Northern Trust</h3><span>Pune</span></div>
+          <ul class="roles"><li><b>Associate</b><span>Jun 2020 – May 2022</span></li></ul>
+        </div>
+      </li>
+      <li class="job">
+        <p class="when">2019 – 2020</p>
+        <div>
+          <div class="org"><h3>TIAA</h3><span>Pune</span></div>
+          <ul class="roles"><li><b>Analyst</b><span>Jan 2019 – Jun 2020</span></li></ul>
+          <p>Worked as a software engineer and analyst.</p>
+        </div>
+      </li>
+      <li class="job">
+        <p class="when">2016 – 2018</p>
+        <div>
+          <div class="org"><h3>CDAC</h3><span>Centre for Development of Advanced Computing · Pune</span></div>
+          <ul class="roles"><li><b>Software Engineer</b><span>Aug 2016 – Dec 2018</span></li></ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <section class="band" id="work">
   <div class="wrap">
     <div class="shead">
-      <h2>A decade of financial systems</h2>
-      <p class="lede">At UBS I lead programs and still write the code. These are two of the systems I work on.</p>
+      <h2>Selected systems at UBS</h2>
+      <p class="lede">Two of the platforms I work on in UBS Wealth Management.</p>
     </div>
-    <div class="orgname"><h3>UBS</h3><span>Associate Director · Pune</span></div>
     <div class="cases">
       <article class="case">
         <div class="cfig" role="img" aria-label="Kafka feeds a Spring Boot service, which pushes to a horizontally scaled WebSocket tier and on to live clients">
@@ -185,14 +283,10 @@ footer a{color:var(--dink);text-decoration:none;padding:10px 0}
         </div>
       </article>
     </div>
-    <div class="before">
-      <div><p class="kicker">Before UBS</p><ul class="orgs"><li>Northern Trust</li><li>TIAA</li><li>CDAC</li></ul></div>
-      <p>Earlier in my career I went deep on Adobe Experience Manager (AEM) Cloud Service: DAM search facets, asset workflow automation, Content Fragment publishing and Oak index management, plus Adobe I/O apps in Node.js.</p>
-    </div>
   </div>
 </section>
 
-<section class="band projects" id="projects">
+<section class="band alt" id="projects">
   <div class="wrap">
     <div class="shead">
       <h2>Side projects</h2>
@@ -303,20 +397,38 @@ footer a{color:var(--dink);text-decoration:none;padding:10px 0}
   </div>
 </section>
 
-<section class="band" id="toolkit">
+<section class="band" id="skills">
   <div class="wrap">
     <div class="shead">
-      <h2>Toolkit</h2>
-      <p class="lede">Deep in the JVM and event streaming, broad across platforms, and now building in AI.</p>
+      <h2>Skills and credentials</h2>
+      <p class="lede">Deep in the JVM, event streaming and system design, broad across platforms, and now building in AI.</p>
     </div>
-    <dl class="spec">
-      <div><dt>Backend</dt><dd>Java, Spring Boot, Spring Batch, JPA, REST APIs, microservices</dd></div>
-      <div><dt>Streaming and real time</dt><dd>Kafka, Avro, WebSockets, STOMP, JWT and JWKS</dd></div>
-      <div><dt>Data and cloud</dt><dd>PostgreSQL, Azure, API gateways</dd></div>
-      <div><dt>AI and ML</dt><dd>Transformer internals, training small GPTs, RAG pipelines, LLM agents, Claude API</dd></div>
-      <div><dt>Platforms</dt><dd>AEM and DAM, Adobe I/O, Node.js, SwiftUI</dd></div>
-      <div><dt>Ways of working</dt><dd>TDD, pair programming, clean code, technical program management</dd></div>
-    </dl>
+    <div class="skills">
+      <dl class="spec">
+        <div><dt>Core engineering</dt><dd>Java, Spring Boot, microservices, REST APIs, JPA, Spring Batch</dd></div>
+        <div><dt>Design</dt><dd>System design, data structures and algorithms</dd></div>
+        <div><dt>Streaming and real time</dt><dd>Kafka, Avro, WebSockets, STOMP, JWT and JWKS</dd></div>
+        <div><dt>Data and cloud</dt><dd>PostgreSQL, Azure, API gateways</dd></div>
+        <div><dt>AI and ML</dt><dd>Transformer internals, training small GPTs, RAG pipelines, LLM agents, Claude API</dd></div>
+        <div><dt>Platforms</dt><dd>JavaScript and Node.js, Adobe Experience Manager (AEM) Cloud Service and DAM, Adobe I/O, SwiftUI</dd></div>
+        <div><dt>Ways of working</dt><dd>TDD, pairing, clean code, agile squads, DevOps and automation, technical program management</dd></div>
+      </dl>
+      <div class="creds">
+        <div class="cred">
+          <p class="kicker">Education</p>
+          <div class="it"><h3>PG-DAC, Information Technology</h3><p>Post Graduate Diploma in Advanced Computing · Sunbeam Institute of Information Technology · 2016</p></div>
+          <div class="it"><h3>BE, Electronics and Telecommunication</h3><p>Sanjivani College of Engineering, Kopargaon · 2011–2015</p></div>
+        </div>
+        <div class="cred">
+          <p class="kicker">Certification</p>
+          <h3>AMCAT Certified Data Processing Specialist</h3>
+        </div>
+        <div class="cred">
+          <p class="kicker">Languages</p>
+          <p>English, Hindi and Marathi, all at full professional proficiency</p>
+        </div>
+      </div>
+    </div>
     <div class="now"><span class="dot" aria-hidden="true"></span><div><p class="kicker">Now</p><p>Going deeper into machine learning from first principles, from the maths up to transformers, and training small language models on Apple Silicon.</p></div></div>
   </div>
 </section>
@@ -400,8 +512,7 @@ function draw(dt){
   ctx.globalCompositeOperation='lighter';
   const RAD=Math.max(70,W*.07),RAD2=RAD*RAD;
   for(const p of parts){
-    const R=routes[p.r];
-    if(dt){p.s+=p.v*dt;if(p.s>=R.L-STEP)spawn(p,false)}
+    if(dt){p.s+=p.v*dt;if(p.s>=routes[p.r].L-STEP)spawn(p,false)}
     const Q=routes[p.r],i=Math.min(Q.len-2,(p.s/STEP)|0),w=env(Q,p.s);
     let x=Q.X[i]+Q.NX[i]*p.o*w,y=Q.Y[i]+Q.NY[i]*p.o*w;
     const dx=x-mx,dy=y-my,dd=dx*dx+dy*dy;
